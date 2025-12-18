@@ -42,7 +42,7 @@ const ParticleField = () => {
       <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#00A3FF" 
+          color="#7B2C9E" 
           size={0.03}
           sizeAttenuation={true}
           depthWrite={false}
@@ -86,15 +86,15 @@ const Connections = () => {
 
    return (
       <lineSegments ref={linesRef} geometry={lines}>
-         {/* Updated to Deep Blue #0066CC */}
-         <lineBasicMaterial color="#0066CC" opacity={0.25} transparent blending={THREE.AdditiveBlending} />
+         {/* Updated to Darkest Purple #4A1F62 */}
+         <lineBasicMaterial color="#4A1F62" opacity={0.25} transparent blending={THREE.AdditiveBlending} />
       </lineSegments>
    )
 }
 
 const Scene3D = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none opacity-60">
+    <div className="fixed inset-0 z-0 pointer-events-none opacity-30 dark:opacity-60">
       <Canvas camera={{ position: [0, 0, 8], fov: 60 }} gl={{ antialias: true, alpha: true }}>
         <fog attach="fog" args={['#050510', 5, 20]} />
         <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
@@ -102,7 +102,7 @@ const Scene3D = () => {
           <Connections />
         </Float>
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white dark:from-obsidian dark:via-transparent dark:to-obsidian opacity-80" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
     </div>
   );

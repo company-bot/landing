@@ -15,8 +15,8 @@ const GlassCard: React.FC<GlassCardProps> = ({
   delay = 0 
 }) => {
   const glowStyles = {
-    cyan: 'hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]',
-    purple: 'hover:border-purple/50 hover:shadow-[0_0_30px_rgba(188,19,254,0.15)]',
+    cyan: 'hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(123,44,158,0.15)]',
+    purple: 'hover:border-purple/50 hover:shadow-[0_0_30px_rgba(74,31,98,0.15)]',
     none: ''
   };
 

@@ -53,7 +53,7 @@ const Capabilities = () => {
     <section className="relative z-10 py-32 px-4" id="capabilities">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
-           <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6 uppercase tracking-wider">
+           <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-950 dark:text-white mb-6 uppercase tracking-wider">
             System <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-purple">Capabilities</span>
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-cyan to-purple mx-auto rounded-full" />
@@ -67,17 +67,17 @@ const Capabilities = () => {
               delay={index * 0.1}
               className="h-full flex flex-col"
             >
-              <div className="mb-6 p-3 bg-white/5 rounded-lg w-fit backdrop-blur-sm border border-white/10">
+              <div className="mb-6 p-3 bg-white/5 dark:bg-white/5 rounded-lg w-fit backdrop-blur-sm border border-gray-300 dark:border-white/10">
                 {item.icon}
               </div>
-              <h3 className="font-display text-xl font-bold text-white mb-3 tracking-wide">{item.title}</h3>
-              <p className="font-sans text-gray-400 mb-6 flex-grow leading-relaxed">{item.description}</p>
+              <h3 className="font-display text-xl font-bold text-gray-950 dark:text-white mb-3 tracking-wide">{item.title}</h3>
+              <p className="font-sans text-gray-700 dark:text-gray-400 mb-6 flex-grow leading-relaxed">{item.description}</p>
               
               <div className="flex flex-wrap gap-2 mt-auto">
                 {item.keywords.map((kw) => (
                   <span 
                     key={kw} 
-                    className="text-xs font-sans uppercase tracking-wider px-2 py-1 rounded bg-white/5 border border-white/10 text-gray-300"
+                    className="text-xs font-sans uppercase tracking-wider px-2 py-1 rounded bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-300"
                   >
                     {kw}
                   </span>
