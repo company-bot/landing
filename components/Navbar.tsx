@@ -31,9 +31,9 @@ const Navbar = () => {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         <div className="flex items-center group cursor-pointer">
-          <img src="/logo/logo.png" alt="SyZentric logo - company branding symbol" className="h-30 md:h-40 w-auto group-hover:scale-105 transition-transform duration-500" />
+          <img src="/logo/logo.png" alt="SyZentric logo - company branding symbol" className="h-12 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-500" />
         </div>
 
         {/* Desktop Nav */}
@@ -82,13 +82,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white dark:bg-obsidian border-b border-gray-200 dark:border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-2xl">
+        <div className="absolute top-full left-0 right-0 bg-white dark:bg-obsidian border-b border-gray-300 dark:border-white/10 p-4 sm:p-6 md:hidden flex flex-col gap-4 shadow-2xl max-h-[calc(100vh-60px)] overflow-y-auto">
            {navLinks.map((link) => (
             <a 
               key={link.label} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="font-sans text-sm uppercase tracking-widest text-gray-700 dark:text-gray-300 py-2 border-b border-gray-200 dark:border-white/5"
+              className="font-sans text-xs sm:text-sm uppercase tracking-widest text-gray-800 dark:text-gray-300 py-3 border-b border-gray-300 dark:border-white/5 hover:text-cyan transition-colors"
             >
               {link.label}
             </a>

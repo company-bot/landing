@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 const Vision = () => {
   return (
-    <section id="vision" className="relative z-10 py-32 px-4 overflow-hidden">
+    <section id="vision" className="relative z-10 py-16 sm:py-24 md:py-32 px-3 sm:px-4 overflow-hidden">
       {/* Background Graphic Suggestion */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] bg-purple/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -18,7 +18,7 @@ const Vision = () => {
             className="relative"
           >
             {/* Abstract Gravitational Visualization CSS */}
-            <div className="relative aspect-square w-full max-w-md mx-auto">
+            <div className="relative aspect-square w-full max-w-xs sm:max-w-md mx-auto">
               <div className="absolute inset-0 border border-cyan/20 rounded-full animate-[spin_20s_linear_infinite]" />
               <div className="absolute inset-8 border border-purple/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
               <div className="absolute inset-16 border border-cyan/10 rounded-full animate-[spin_10s_linear_infinite]" />
@@ -45,15 +45,15 @@ const Vision = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-left"
           >
-            <h2 className="font-display text-4xl font-bold mb-8 text-gray-950 dark:text-white uppercase">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-gray-950 dark:text-white uppercase">
               The <span className="text-purple">Gravity</span> of Infrastructure
             </h2>
             
-            <div className="glass-panel p-8 rounded-xl border-l-4 border-l-cyan">
-              <p className="font-sans text-xl text-gray-800 dark:text-gray-300 leading-relaxed mb-6">
+            <div className="glass-panel p-4 sm:p-8 rounded-xl border-l-4 border-l-cyan">
+              <p className="font-sans text-base sm:text-lg md:text-xl text-gray-800 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                 "Just as gravity holds a galaxy together, Syzentric provides the invisible structure that allows digital ecosystems to operate, scale, and evolve."
               </p>
-              <p className="font-sans text-gray-700 dark:text-gray-400">
+              <p className="font-sans text-sm sm:text-base text-gray-700 dark:text-gray-400">
                 We don't just build apps; we engineer the fundamental forces that keep your business universe in motion. From the atomic level of code to the galactic scale of cloud architecture.
               </p>
             </div>

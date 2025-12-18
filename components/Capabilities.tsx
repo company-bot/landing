@@ -50,16 +50,16 @@ const capabilities: CapabilityItem[] = [
 
 const Capabilities = () => {
   return (
-    <section className="relative z-10 py-32 px-4" id="capabilities">
+    <section className="relative z-10 py-16 sm:py-24 md:py-32 px-3 sm:px-4" id="capabilities">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 text-center">
-           <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-950 dark:text-white mb-6 uppercase tracking-wider">
+        <div className="mb-12 sm:mb-16 md:mb-20 text-center">
+           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-gray-950 dark:text-white mb-4 sm:mb-6 uppercase tracking-wider">
             System <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-purple">Capabilities</span>
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-cyan to-purple mx-auto rounded-full" />
+          <div className="h-1 w-20 sm:w-24 bg-gradient-to-r from-cyan to-purple mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {capabilities.map((item, index) => (
             <GlassCard 
               key={item.id} 
