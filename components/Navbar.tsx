@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         <div className="flex items-center group cursor-pointer">
-          <img src="/logo/logo.png" alt="SyZentric logo - company branding symbol" className="h-12 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-500" />
+          <Logo className="h-12 sm:h-16 md:h-20 w-auto group-hover:scale-105 transition-transform duration-500" />
         </div>
 
         {/* Desktop Nav */}
