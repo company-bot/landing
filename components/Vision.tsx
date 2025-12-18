@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Vision = () => {
   return (
-    <section className="relative z-10 py-32 px-4 overflow-hidden">
+    <section id="vision" className="relative z-10 py-32 px-4 overflow-hidden">
       {/* Background Graphic Suggestion */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple/10 rounded-full blur-[120px] pointer-events-none" />
 

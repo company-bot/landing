@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative z-10 min-h-screen flex flex-col justify-center items-center px-4 pt-20">
+    <section id="hero" className="relative z-10 min-h-screen flex flex-col justify-center items-center px-4 pt-20">
       <div className="max-w-6xl w-full mx-auto text-center space-y-8">
         
         {/* Decorative Top Line */}

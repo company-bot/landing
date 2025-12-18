@@ -3,12 +3,12 @@ import Logo from './Logo';
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 pt-20 pb-10 px-4 border-t border-white/5 bg-obsidian/80 backdrop-blur-xl">
+    <footer id="contact" className="relative z-10 pt-20 pb-10 px-4 border-t border-white/5 bg-obsidian/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Logo className="w-10 h-10" />
+              <Logo className="w-14 h-14" />
               <h3 className="font-display text-2xl font-bold tracking-widest text-white mt-1">SYZENTRIC</h3>
             </div>
             <p className="text-gray-400 max-w-md font-sans leading-relaxed">
@@ -31,6 +31,12 @@ const Footer = () => {
                 <li className="hover:text-purple transition-colors cursor-pointer">Privacy Policy</li>
                 <li className="hover:text-purple transition-colors cursor-pointer">Terms of Service</li>
                 <li className="hover:text-purple transition-colors cursor-pointer">System Status: <span className="text-green-500">Operational</span></li>
+                <li className="hover:text-cyan transition-colors cursor-pointer">
+                  <a href="mailto:syzentric@gmail.com" className="flex items-center gap-2">
+                    <span>Contact us</span>
+                    <span className="text-gray-400">syzentric@gmail.com</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

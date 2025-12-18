@@ -15,9 +15,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { label: 'Home', href: '#hero' },
     { label: 'Capabilities', href: '#capabilities' },
-    { label: 'Vision', href: '#' },
-    { label: 'Contact', href: '#' }
+    { label: 'Vision', href: '#vision' },
+    { label: 'Contact', href: '#contact' }
   ];
 
   return (
@@ -28,7 +29,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-3 group cursor-pointer">
-          <Logo className="w-10 h-10 group-hover:scale-110 transition-transform duration-500" />
+          <Logo className="w-14 h-14 group-hover:scale-110 transition-transform duration-500" />
           <span className="font-display font-bold text-xl tracking-widest text-white mt-1">SYZENTRIC</span>
         </div>
 
@@ -44,9 +45,6 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan transition-all group-hover:w-full" />
             </a>
           ))}
-          <button className="px-5 py-2 border border-purple/50 text-purple text-sm uppercase tracking-widest hover:bg-purple hover:text-white transition-all duration-300">
-            Access Portal
-          </button>
         </div>
 
         {/* Mobile Toggle */}
