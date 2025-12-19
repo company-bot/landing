@@ -48,23 +48,23 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="pt-4 sm:pt-8 flex justify-center gap-3 sm:gap-6 flex-wrap"
         >
-          <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-transparent overflow-hidden rounded-none border border-cyan/30 hover:border-cyan/100 transition-colors duration-300">
+          {/* <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-transparent overflow-hidden rounded-none border border-cyan/30 hover:border-cyan/100 transition-colors duration-300">
             <div className="absolute inset-0 w-0 bg-cyan/10 transition-all duration-[250ms] ease-out group-hover:w-full opacity-50" />
             <span className="relative font-display uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 text-cyan">
               Initialize System <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
-          </button>
+          </button> */}
         </motion.div>
       </div>
 
-      <motion.div 
+      {/* <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
       >
         <ChevronDown className="w-6 h-6 text-gray-400 dark:text-gray-600" />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };
