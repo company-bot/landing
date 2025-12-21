@@ -21,32 +21,30 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a 
-                href="mailto:edu@syzentric.com" 
+                href="mailto:syzentric@gmail.com" 
                 className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
                 aria-label="Email"
+                title="info@syzentric.com"
               >
                 <Mail className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/syzentric/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
               </a>
               <a 
-                href="#" 
+                href="https://x.com/syzentric" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
-              </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
               </a>
             </div>
           </div>
