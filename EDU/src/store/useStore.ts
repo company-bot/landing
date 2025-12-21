@@ -6,7 +6,7 @@ interface StoreState {
 }
 
 export const useStore = create<StoreState>((set) => ({
-  isDarkMode: true,
+  isDarkMode: false,
   toggleTheme: () => set((state) => {
     const newMode = !state.isDarkMode;
     document.documentElement.classList.toggle('dark', newMode);

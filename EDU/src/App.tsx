@@ -5,6 +5,7 @@ import Programs from './components/Programs.tsx';
 import Features from './components/Features.tsx';
 import Courses from './components/Courses.tsx';
 import Footer from './components/Footer.tsx';
+import Scene3D from './components/Scene3D.tsx';
 import { useStore } from './store/useStore.ts';
 
 function App() {
@@ -29,8 +30,8 @@ function App() {
         <Footer />
       </div>
       
-      {/* Global Grain Overlay */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[60] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* 3D Background */}
+      <Scene3D />
     </div>
   );
 }
