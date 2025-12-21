@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import Scene3D from './components/Scene3D';
 import Hero from './components/Hero';
-import Chatbot from './components/Chatbot';
+import ChatbotWidget from './components/ChatbotWidget';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { useStore } from './store/useStore';
@@ -24,10 +24,12 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Hero />
-          <Chatbot />
         </main>
         <Footer />
       </div>
+      
+      {/* Floating Chatbot Widget */}
+      <ChatbotWidget />
     </div>
   );
 }
