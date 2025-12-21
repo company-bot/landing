@@ -1,8 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import Scene3D from './components/Scene3D';
 import Hero from './components/Hero';
-import Capabilities from './components/Capabilities';
-import Vision from './components/Vision';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { useStore } from './store/useStore';
@@ -11,7 +9,7 @@ function App() {
   const { isDarkMode } = useStore();
 
   useEffect(() => {
-    // Initialize theme on mount
+    // Initialize theme on mount - default to light mode
     document.documentElement.classList.toggle('dark', isDarkMode);
   }, [isDarkMode]);
 
@@ -21,18 +19,13 @@ function App() {
         <Scene3D />
       </Suspense>
       
-      <div className="relative z-10 flex flex-col">
+      <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        <main>
+        <main className="flex-grow">
           <Hero />
-          <Capabilities />
-          <Vision />
         </main>
         <Footer />
       </div>
-      
-      {/* Global Grain Overlay */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[60] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </div>
   );
 }

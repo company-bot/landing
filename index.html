@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SyZentric</title>
-    <!-- Favicon with multiple formats for better compatibility -->
+    <title>SyZentric - The Zenith of Intelligence</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="64x64" href="/logo/favicon.png?v=2" />
     <link rel="icon" type="image/png" sizes="48x48" href="/logo/favicon.png?v=2" />
     <link rel="apple-touch-icon" sizes="192x192" href="/logo/favicon.png?v=2" />
@@ -27,15 +27,8 @@
           extend: {
             colors: {
               obsidian: '#050510',
-              // Updated to Purple palette based on logo
-              cyan: {
-                DEFAULT: '#7B2C9E', // Main Purple
-                glow: '#7B2C9E80'
-              },
-              purple: {
-                DEFAULT: '#4A1F62', // Darkest Purple
-                glow: '#4A1F6280'
-              }
+              cyan: { DEFAULT: '#7B2C9E', glow: '#7B2C9E80' },
+              purple: { DEFAULT: '#4A1F62', glow: '#4A1F6280' }
             },
             fontFamily: {
               sans: ['Rajdhani', 'sans-serif'],
@@ -49,97 +42,34 @@
       }
     </script>
     <style>
-      body {
-        margin: 0;
-        background-color: #f0f1f3;
-        overflow-x: hidden;
-        color: #0f172a;
-        transition: background-color 0.3s, color 0.3s;
-      }
+      body { margin: 0; background-color: #f0f1f3; overflow-x: hidden; color: #0f172a; transition: background-color 0.3s, color 0.3s; }
+      .dark body { background-color: #050510; color: #e2e8f0; }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #7B2C9E; }
+      .dark ::-webkit-scrollbar-track { background: #1e293b; }
+      .dark ::-webkit-scrollbar-thumb { background: #475569; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #7B2C9E; }
       
-      .dark body {
-        background-color: #050510;
-        color: #e2e8f0;
-      }
+      .text-glow-cyan { text-shadow: 0 0 40px rgba(123, 44, 158, 0.3); }
+      .glass-panel { background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+      .dark .glass-panel { background: rgba(5, 5, 16, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); }
       
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      ::-webkit-scrollbar-track {
-        background: #f1f5f9; 
+      .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(123, 44, 158, 0.3);
       }
-      ::-webkit-scrollbar-thumb {
-        background: #cbd5e1; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #7B2C9E; 
-      }
-      
-      .dark ::-webkit-scrollbar-track {
-        background: #050510; 
-      }
-      .dark ::-webkit-scrollbar-thumb {
-        background: #0f172a; 
-      }
-      .dark ::-webkit-scrollbar-thumb:hover {
-        background: #7B2C9E; 
-      }
-
-      .text-glow-cyan {
-        text-shadow: 0 0 10px rgba(123, 44, 158, 0.5), 0 0 20px rgba(123, 44, 158, 0.3);
-      }
-      
-      .text-glow-purple {
-        text-shadow: 0 0 10px rgba(74, 31, 98, 0.5), 0 0 20px rgba(74, 31, 98, 0.3);
-      }
-
-      .glass-panel {
-        background: rgba(243, 244, 246, 0.8);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-      }
-      
-      .dark .glass-panel {
-        background: rgba(5, 5, 16, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .glass-card-hover:hover {
-        background: rgba(123, 44, 158, 0.05);
-        border-color: rgba(123, 44, 158, 0.3);
-        box-shadow: 0 0 15px rgba(123, 44, 158, 0.1);
-      }
-      
-      .dark .glass-card-hover:hover {
-        background: rgba(123, 44, 158, 0.05);
-        border-color: rgba(123, 44, 158, 0.3);
-        box-shadow: 0 0 15px rgba(123, 44, 158, 0.1);
+      .dark .card-hover:hover {
+        box-shadow: 0 20px 40px rgba(123, 44, 158, 0.5);
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "zustand": "https://esm.sh/zustand@^5.0.9",
-    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
-    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2",
-    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7",
-    "three": "https://esm.sh/three@^0.182.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

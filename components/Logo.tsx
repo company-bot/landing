@@ -1,13 +1,16 @@
 import React from 'react';
-import logoSrc from '../logo/logo.png';
 
 interface LogoProps {
   className?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10" }) => {
+const Logo: React.FC<LogoProps> = ({ className = '' }) => {
   return (
-    <img src={logoSrc} alt="SYZENTRIC logo" className={className} />
+    <img 
+      src="/logo/logo.png" 
+      alt="SyZentric Logo" 
+      className={className}
+    />
   );
 };
 

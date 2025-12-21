@@ -1,10 +1,14 @@
 import { create } from 'zustand';
-import { ThemeState } from '../types';
 
-// Get initial theme from localStorage or default to light mode
+interface ThemeState {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
+
 const getInitialTheme = (): boolean => {
   if (typeof window === 'undefined') return false;
   const stored = localStorage.getItem('theme');
+  // Default to light mode
   return stored === 'dark';
 };
 
