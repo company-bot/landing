@@ -1,4 +1,5 @@
 import React from 'react';
+import { Mail, Linkedin, Twitter } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -26,18 +27,34 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-gray-950 dark:text-white font-bold uppercase tracking-wider mb-3 sm:mb-4">Protocols</h4>
-              <ul className="space-y-1 sm:space-y-2 text-gray-600 dark:text-gray-500">
-                <li className="hover:text-purple transition-colors cursor-pointer text-xs sm:text-sm">Privacy Policy</li>
-                <li className="hover:text-purple transition-colors cursor-pointer text-xs sm:text-sm">Terms of Service</li>
-                <li className="hover:text-purple transition-colors cursor-pointer text-xs sm:text-sm">System Status: <span className="text-green-500">Operational</span></li>
-                <li className="hover:text-cyan transition-colors cursor-pointer text-xs sm:text-sm">
-                  <a href="mailto:syzentric@gmail.com" className="flex items-center gap-2">
-                    <span>Contact us</span>
-                    <span className="text-gray-500 dark:text-gray-400 truncate">syzentric@gmail.com</span>
-                  </a>
-                </li>
-              </ul>
+              <h4 className="text-gray-950 dark:text-white font-bold uppercase tracking-wider mb-3 sm:mb-4">Contact Us</h4>
+              <div className="flex gap-3">
+                <a 
+                  href="mailto:syzentric@gmail.com" 
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
+                </a>
+                <a 
+                  href="https://x.com/syzentric" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/syzentric/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 hover:bg-cyan/10 dark:hover:bg-cyan/10 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-400 hover:text-cyan" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
