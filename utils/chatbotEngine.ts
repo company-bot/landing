@@ -1,4 +1,4 @@
-import { knowledgeBase, fallbackResponses } from '../data/chatbotKnowledge';
+import { knowledgeBase, fallbackResponses, defaultSuggestedQuestions, KnowledgeItem } from '../data/chatbotKnowledge';
 
 /**
  * Normalize text for comparison by converting to lowercase and removing extra spaces
@@ -53,31 +53,49 @@ const calculateMatchScore = (input: string, keywords: string[]): number => {
 
 /**
  * Find the best matching answer from the knowledge base
+ * Returns both the answer and the matched knowledge item for suggested questions
  */
-export const findBestMatch = (userInput: string): string => {
+export const findBestMatch = (userInput: string): { answer: string; suggestedQuestions: string[] } => {
   if (!userInput || userInput.trim().length === 0) {
-    return "Please type a question or message, and I'll do my best to help you! 😊";
+    return {
+      answer: "Please type a question or message, and I'll do my best to help you! 😊",
+      suggestedQuestions: defaultSuggestedQuestions.slice(0, 3)
+    };
   }
   
-  let bestMatch = { score: 0, answer: '' };
+  let bestMatch: { score: number; item: KnowledgeItem | null } = { score: 0, item: null };
   
   // Check each knowledge item
   for (const item of knowledgeBase) {
     const score = calculateMatchScore(userInput, item.keywords);
     
     if (score > bestMatch.score) {
-      bestMatch = { score, answer: item.answer };
+      bestMatch = { score, item };
     }
   }
   
-  // If we have a decent match (score > 15), return it
-  if (bestMatch.score > 15) {
-    return bestMatch.answer;
+  // If we have a decent match (score > 15), return it with suggested questions
+  if (bestMatch.score > 15 && bestMatch.item) {
+    return {
+      answer: bestMatch.item.answer,
+      suggestedQuestions: bestMatch.item.relatedQuestions || getRandomSuggestedQuestions()
+    };
   }
   
-  // Otherwise, return a random fallback response
+  // Otherwise, return a random fallback response with default suggestions
   const randomIndex = Math.floor(Math.random() * fallbackResponses.length);
-  return fallbackResponses[randomIndex];
+  return {
+    answer: fallbackResponses[randomIndex],
+    suggestedQuestions: getRandomSuggestedQuestions()
+  };
+};
+
+/**
+ * Get random suggested questions from the default list
+ */
+const getRandomSuggestedQuestions = (): string[] => {
+  const shuffled = [...defaultSuggestedQuestions].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, 3);
 };
 
 /**
@@ -88,17 +106,4 @@ export const getTypingDelay = (message: string): number => {
   const baseDelay = 500;
   const charDelay = message.length * 10;
   return Math.min(baseDelay + charDelay, 2000); // Cap at 2 seconds
-};
-
-/**
- * Get suggested questions based on category
- */
-export const getSuggestedQuestions = (): string[] => {
-  return [
-    "What is SyZentric?",
-    "Tell me about the TECH platform",
-    "What courses does EDU offer?",
-    "How can I contact you?",
-    "What services do you provide?"
-  ];
 };
