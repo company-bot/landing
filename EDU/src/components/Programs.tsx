@@ -7,33 +7,78 @@ const Programs = () => {
   const programs = [
     {
       icon: BookOpen,
-      title: 'AI & Machine Learning',
-      description: 'Master neural networks, deep learning, and AI model deployment with hands-on projects.',
+      title: 'Coding Logic & Python Basics',
+      description:
+        'Learn how to think like a programmer. This course focuses on logic, problem-solving, and Python basics for absolute beginners.',
       color: 'cyan' as const,
-      highlights: ['TensorFlow & PyTorch', 'MLOps & Deployment', 'Computer Vision']
-    },
-    {
-      icon: TrendingUp,
-      title: 'Data Science & Analytics',
-      description: 'Transform data into insights using advanced statistical methods and visualization.',
-      color: 'purple' as const,
-      highlights: ['Python & R', 'Big Data Tools', 'Statistical Modeling']
+      highlights: [
+        'Programming Logic',
+        'Python Fundamentals',
+        'Problem Solving Skills'
+      ]
     },
     {
       icon: Users,
-      title: 'Full-Stack Development',
-      description: 'Build modern web applications with React, Node.js, and cloud technologies.',
+      title: 'Web Development Foundations',
+      description:
+        'Understand how websites work by building them step by step. No shortcuts, only real understanding.',
+      color: 'purple' as const,
+      highlights: [
+        'HTML, CSS & JavaScript',
+        'Backend Basics',
+        'Build Real Websites'
+      ]
+    },
+    {
+      icon: TrendingUp,
+      title: 'Data Science Basics',
+      description:
+        'Learn how data is cleaned, analyzed, and understood using simple tools and real examples.',
       color: 'cyan' as const,
-      highlights: ['React & TypeScript', 'Backend APIs', 'Cloud Deployment']
+      highlights: [
+        'Python for Data',
+        'Data Cleaning',
+        'Simple Data Analysis'
+      ]
     },
     {
       icon: Award,
-      title: 'Professional Certifications',
-      description: 'Industry-recognized credentials that validate your expertise and accelerate your career.',
+      title: 'Machine Learning Fundamentals',
+      description:
+        'Understand how machine learning works behind the scenes instead of just using ready-made tools.',
       color: 'purple' as const,
-      highlights: ['AWS Certified', 'Google Cloud', 'Azure Fundamentals']
+      highlights: [
+        'ML Concepts & Logic',
+        'Model Training Basics',
+        'Mini ML Projects'
+      ]
+    },
+    {
+      icon: BookOpen,
+      title: 'Final Year Project Guidance (BS / MS)',
+      description:
+        'Step-by-step help for academic projects including idea selection, coding, and documentation.',
+      color: 'cyan' as const,
+      highlights: [
+        'Project Planning',
+        'Implementation Support',
+        'Report & Presentation Help'
+      ]
+    },
+    {
+      icon: Users,
+      title: 'Matric & FSc Tech Starter Program',
+      description:
+        'A beginner-friendly program for school and college students to learn logic, coding basics, and tech thinking before university.',
+      color: 'purple' as const,
+      highlights: [
+        'Logic Building',
+        'Intro to Coding',
+        'Confidence Before University'
+      ]
     }
   ];
+
 
   return (
     <section id="programs" className="relative z-10 py-20 sm:py-32 px-4 sm:px-6">
