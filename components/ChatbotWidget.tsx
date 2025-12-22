@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Minimize2, Sparkles } from 'lucide-react';
-import { findBestMatch, getTypingDelay, getSuggestedQuestions } from '../utils/chatbotEngine';
-import { greetingMessage } from '../data/chatbotKnowledge';
+import { findBestMatch, getTypingDelay } from '../utils/chatbotEngine';
+import { greetingMessage, defaultSuggestedQuestions } from '../data/chatbotKnowledge';
 
 interface Message {
   id: string;
@@ -16,6 +16,7 @@ const ChatbotWidget: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>(defaultSuggestedQuestions.slice(0, 3));
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const chatWindowRef = useRef<HTMLDivElement>(null);
@@ -77,20 +78,21 @@ const ChatbotWidget: React.FC = () => {
     setIsTyping(true);
 
     // Get bot response
-    const response = findBestMatch(inputValue);
-    const delay = getTypingDelay(response);
+    const { answer, suggestedQuestions: nextQuestions } = findBestMatch(inputValue);
+    const delay = getTypingDelay(answer);
 
     // Simulate typing delay
     await new Promise(resolve => setTimeout(resolve, delay));
 
     const botMessage: Message = {
       id: (Date.now() + 1).toString(),
-      text: response,
+      text: answer,
       sender: 'bot',
       timestamp: new Date()
     };
 
     setMessages(prev => [...prev, botMessage]);
+    setSuggestedQuestions(nextQuestions);
     setIsTyping(false);
   };
 
@@ -226,11 +228,11 @@ const ChatbotWidget: React.FC = () => {
                 </div>
 
                 {/* Suggested Questions */}
-                {messages.length <= 1 && (
+                {suggestedQuestions.length > 0 && (
                   <div className="px-4 py-2 bg-white dark:bg-obsidian border-t border-gray-200 dark:border-white/10">
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Suggested questions:</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">You might also want to ask:</p>
                     <div className="flex flex-wrap gap-2">
-                      {getSuggestedQuestions().slice(0, 3).map((question, idx) => (
+                      {suggestedQuestions.map((question: string, idx: number) => (
                         <button
                           key={idx}
                           onClick={() => handleSuggestedQuestion(question)}
