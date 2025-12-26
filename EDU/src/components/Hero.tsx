@@ -32,7 +32,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="font-display font-bold tracking-[0.15em] sm:tracking-[0.2em] text-cyan text-xs sm:text-sm uppercase"
         >
-          SyZentric Education
+       Where Logic Meets Technology
         </motion.h2>
 
         <motion.h1 
@@ -41,8 +41,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="font-display font-black text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter text-gray-950 dark:text-white mix-blend-screen leading-none"
         >
-          <span className="block text-glow-cyan">ELEVATE</span>
-          <span className="block text-glow-purple mt-2">YOUR SKILLS</span>
+          <span className="block text-glow-cyan">SYZENTRIC</span>
         </motion.h1>
 
         <motion.p 
