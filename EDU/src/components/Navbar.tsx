@@ -20,7 +20,7 @@ const Navbar = () => {
     { label: 'Home', href: '#hero' },
     { label: 'Programs', href: '#programs' },
     { label: 'Features', href: '#features' },
-    { label: 'Courses', href: '#courses' }
+    { label: 'Contact', href: '#contact' }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

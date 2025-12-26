@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { Cpu, ArrowRight, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -12,8 +12,17 @@ const Hero = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="w-px h-16 sm:h-24 bg-gradient-to-b from-transparent via-cyan to-transparent mx-auto mb-4 sm:mb-8"
+          // className="w-px h-16 sm:h-24 bg-gradient-to-b from-transparent via-cyan to-transparent mx-auto mb-4 sm:mb-8"
         />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-center mb-6"
+        >
+          <Cpu className="w-16 h-16 text-cyan" />
+        </motion.div>
 
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

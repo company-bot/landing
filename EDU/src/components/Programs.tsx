@@ -7,7 +7,7 @@ const Programs = () => {
   const programs = [
     {
       icon: BookOpen,
-      title: 'Coding Logic & Python Basics',
+      title: 'Coding Logic & Python',
       description:
         'Learn how to think like a programmer. This course focuses on logic, problem-solving, and Python basics for absolute beginners.',
       color: 'cyan' as const,
@@ -31,7 +31,7 @@ const Programs = () => {
     },
     {
       icon: TrendingUp,
-      title: 'Data Science Basics',
+      title: 'Data Science',
       description:
         'Learn how data is cleaned, analyzed, and understood using simple tools and real examples.',
       color: 'cyan' as const,
@@ -55,7 +55,7 @@ const Programs = () => {
     },
     {
       icon: BookOpen,
-      title: 'Final Year Project Guidance (BS / MS)',
+      title: 'Final Year Project Guidance',
       description:
         'Step-by-step help for academic projects including idea selection, coding, and documentation.',
       color: 'cyan' as const,
@@ -67,7 +67,7 @@ const Programs = () => {
     },
     {
       icon: Users,
-      title: 'Matric & FSc Tech Starter Program',
+      title: 'Tech Starter Program',
       description:
         'A beginner-friendly program for school and college students to learn logic, coding basics, and tech thinking before university.',
       color: 'purple' as const,
@@ -95,11 +95,11 @@ const Programs = () => {
           <h2 className="font-display font-bold text-cyan text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
             Our Programs
           </h2>
-          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-950 dark:text-white">
-            Learn From <span className="text-glow-cyan">The Best</span>
-          </h3>
+          <h4 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+            Learn by Doing, Think by Logic
+          </h4>
           <p className="mt-6 text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
-            Industry-aligned programs designed to make you job-ready in emerging technologies
+            Build strong fundamentals and use logic to create real solutions
           </p>
         </motion.div>
 

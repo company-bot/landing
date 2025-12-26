@@ -65,11 +65,11 @@ const Footer = () => {
                   Features
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#courses" className="text-gray-700 dark:text-gray-400 hover:text-cyan transition-colors">
                   Courses
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#" className="text-gray-700 dark:text-gray-400 hover:text-cyan transition-colors">
                   Instructors
@@ -89,21 +89,21 @@ const Footer = () => {
                   FAQs
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="text-gray-700 dark:text-gray-400 hover:text-cyan transition-colors">
                   Contact Us
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a href="#" className="text-gray-700 dark:text-gray-400 hover:text-cyan transition-colors">
                   Student Portal
                 </a>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <a href="#" className="text-gray-700 dark:text-gray-400 hover:text-cyan transition-colors">
                   Careers
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

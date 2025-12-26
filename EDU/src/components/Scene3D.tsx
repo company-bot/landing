@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Float } from '@react-three/drei';
+import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
 const ParticleField = () => {
@@ -41,8 +41,8 @@ const ParticleField = () => {
         <PointMaterial
           transparent
           color="#7B2C9E"
-          size={0.03}
-          sizeAttenuation
+          size={0.02}
+          sizeAttenuation={true}
           depthWrite={false}
           opacity={0.6}
           blending={THREE.AdditiveBlending}
@@ -52,53 +52,17 @@ const ParticleField = () => {
   );
 };
 
-const Connections = () => {
-  const count = 50;
-  const lines = useMemo(() => {
-    const points: THREE.Vector3[] = [];
-    for (let i = 0; i < count; i++) {
-      const start = new THREE.Vector3(
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10
-      );
-      const end = new THREE.Vector3(
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10
-      );
-      points.push(start, end);
-    }
-    return new THREE.BufferGeometry().setFromPoints(points);
-  }, []);
-
-  const linesRef = useRef<THREE.LineSegments>(null);
-
-  useFrame((_, delta) => {
-    if (linesRef.current) {
-      linesRef.current.rotation.y += delta / 30;
-    }
-  });
-
-  return (
-    <lineSegments ref={linesRef} geometry={lines}>
-      <lineBasicMaterial color="#4A1F62" opacity={0.25} transparent blending={THREE.AdditiveBlending} />
-    </lineSegments>
-  );
-};
-
 const Scene3D = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none opacity-30 dark:opacity-60">
-      <Canvas camera={{ position: [0, 0, 8], fov: 60 }} gl={{ antialias: true, alpha: true }}>
-        <fog attach="fog" args={["#050510", 5, 20]} />
-        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-          <ParticleField />
-          <Connections />
-        </Float>
+    <div className="fixed inset-0 z-0">
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 75 }}
+        gl={{ alpha: true, antialias: true }}
+        style={{ background: 'transparent' }}
+      >
+        <ambientLight intensity={0.5} />
+        <ParticleField />
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white dark:from-obsidian dark:via-transparent dark:to-obsidian opacity-80" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
     </div>
   );
 };

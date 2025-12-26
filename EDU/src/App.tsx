@@ -3,7 +3,7 @@ import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import Programs from './components/Programs.tsx';
 import Features from './components/Features.tsx';
-import Courses from './components/Courses.tsx';
+import ContactForm from './components/ContactForm.tsx';
 import Footer from './components/Footer.tsx';
 import Scene3D from './components/Scene3D.tsx';
 import { useStore } from './store/useStore.ts';
@@ -25,7 +25,8 @@ function App() {
           <Hero />
           <Programs />
           <Features />
-          <Courses />
+          {/* <Courses /> */}
+          <ContactForm />
         </main>
         <Footer />
       </div>

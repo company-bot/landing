@@ -52,9 +52,9 @@ const Features = () => {
           <h2 className="font-display font-bold text-purple text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
             Why Choose Us
           </h2>
-          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-950 dark:text-white">
-            <span className="text-glow-purple">Premium</span> Learning Experience
-          </h3>
+          <h4 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+            Premium Learning Experience
+          </h4>
         </motion.div>
 
         {/* Features Grid */}
