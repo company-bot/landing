@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     // Initialize theme on mount - default to light mode
-    document.documentElement.classList.toggle('dark', isDarkMode);
+    document.documentElement.classList.toggle('light', isDarkMode);
   }, [isDarkMode]);
 
   return (
