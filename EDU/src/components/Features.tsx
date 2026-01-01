@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GlassCard from './UI/GlassCard.tsx';
-import { Clock, Video, FileText, Users2, Headphones, Trophy } from 'lucide-react';
+import { Clock, Video, FileText, Users2, Headphones, GitBranch } from 'lucide-react';
 
 const Features = () => {
   const features = [
@@ -13,7 +13,7 @@ const Features = () => {
     {
       icon: Users2,
       title: 'Expert Instructors',
-      description: 'Learn from industry professionals with real-world experience'
+      description: 'We simplify complex technical concepts into easy-to-understand lessons for all levels'
     },
     {
       icon: FileText,
@@ -26,8 +26,8 @@ const Features = () => {
       description: 'Get help when you need it with 1-on-1 mentorship'
     },
     {
-      icon: Trophy,
-      title: 'Career Services',
+      icon: GitBranch,
+      title: 'Technical Growth & Guidance',
       description: 'Resume reviews, interview prep, and job placement assistance'
     },
     {

@@ -13,7 +13,7 @@ const Programs = () => {
       color: 'cyan' as const,
       highlights: [
         'Programming Logic',
-        'Python Fundamentals',
+        'Python',
         'Problem Solving Skills'
       ]
     },
@@ -25,7 +25,7 @@ const Programs = () => {
       color: 'purple' as const,
       highlights: [
         'HTML, CSS & JavaScript',
-        'Backend Basics',
+        'Backend',
         'Build Real Websites'
       ]
     },
@@ -36,9 +36,9 @@ const Programs = () => {
         'Learn how data is cleaned, analyzed, and understood using simple tools and real examples.',
       color: 'cyan' as const,
       highlights: [
-        'Python for Data',
+        'Python for EDA',
         'Data Cleaning',
-        'Simple Data Analysis'
+        'Data Analysis'
       ]
     },
     {
@@ -49,7 +49,7 @@ const Programs = () => {
       color: 'purple' as const,
       highlights: [
         'ML Concepts & Logic',
-        'Model Training Basics',
+        'Model Training & Evaluation',
         'Mini ML Projects'
       ]
     },
