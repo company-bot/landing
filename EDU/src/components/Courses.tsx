@@ -50,13 +50,13 @@ const Courses = () => {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="font-display font-bold text-cyan text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
-            Featured Courses
+            Popular Courses
           </h2>
-          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-950 dark:text-white">
-            Start Your <span className="text-glow-cyan">Journey</span>
+          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+            Choose Your <span className="text-glow-cyan">Path</span>
           </h3>
           <p className="mt-6 text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
-            Comprehensive programs with everything you need to succeed
+            Comprehensive programs designed to take you from beginner to job-ready professional
           </p>
         </motion.div>
 
@@ -100,18 +100,21 @@ const Courses = () => {
                 {/* Topics */}
                 <div className="mb-6 flex-grow">
                   <h5 className="text-sm font-bold text-gray-700 dark:text-gray-400 mb-3 uppercase tracking-wider">
-                    What You'll Learn:
+                    Learning Outcomes:
                   </h5>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="space-y-2">
                     {course.topics.map((topic, idx) => (
-                      <span 
+                      <li 
                         key={idx}
-                        className="px-3 py-1 text-xs rounded-full bg-white/10 dark:bg-white/5 text-gray-700 dark:text-gray-400 border border-gray-200 dark:border-white/10"
+                        className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-400"
                       >
-                        {topic}
-                      </span>
+                        <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                          course.color === 'cyan' ? 'bg-cyan' : 'bg-purple'
+                        }`} />
+                        <span>{topic}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
                 {/* Footer */}
@@ -138,7 +141,7 @@ const Courses = () => {
                     <span className={`relative font-display uppercase tracking-widest text-xs flex items-center justify-center gap-2 ${
                       course.color === 'cyan' ? 'text-cyan' : 'text-purple'
                     }`}>
-                      Enroll Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      Enroll in Course <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </button>
                 </div>

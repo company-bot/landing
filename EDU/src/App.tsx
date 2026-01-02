@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import Programs from './components/Programs.tsx';
+import HowItWorks from './components/HowItWorks.tsx';
+
 import Features from './components/Features.tsx';
 import ContactForm from './components/ContactForm.tsx';
 import Footer from './components/Footer.tsx';
@@ -24,8 +26,8 @@ function App() {
         <main>
           <Hero />
           <Programs />
+          <HowItWorks />
           <Features />
-          {/* <Courses /> */}
           <ContactForm />
         </main>
         <Footer />
