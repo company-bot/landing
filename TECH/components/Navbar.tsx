@@ -23,7 +23,7 @@ const Navbar = () => {
     { label: 'Contact', href: '/contact' }
   ];
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const id = href.replace('/', '');
     const element = document.getElementById(id);
