@@ -3,7 +3,7 @@ import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import Programs from './components/Programs.tsx';
 import HowItWorks from './components/HowItWorks.tsx';
-
+import AccessibleLearning from './components/AccessibleLearning.tsx';
 import Features from './components/Features.tsx';
 import ContactForm from './components/ContactForm.tsx';
 import Footer from './components/Footer.tsx';
@@ -27,6 +27,7 @@ function App() {
           <Hero />
           <Programs />
           <HowItWorks />
+          <AccessibleLearning />
           <Features />
           <ContactForm />
         </main>

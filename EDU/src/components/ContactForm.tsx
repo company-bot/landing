@@ -213,10 +213,21 @@ const ContactForm = () => {
                   className="w-full px-4 py-3 rounded-lg bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-cyan focus:ring-2 focus:ring-cyan/20 outline-none transition-all text-gray-900 dark:text-white"
                 >
                   <option value="">Select your level</option>
-                  <option value="matric">Matric</option>
-                  <option value="fsc">FSc / A-Levels</option>
-                  <option value="bachelors">Bachelors (BS/BSc)</option>
-                  <option value="masters">Masters (MS/MSc)</option>
+                  {/* High School covers Matric/O-Levels/Grade 10 */}
+                  <option value="secondary">Secondary School (High School)</option>
+                  
+                  {/* Higher Secondary covers FSc/A-Levels/Grade 12 */}
+                  <option value="higher_secondary">Higher Secondary / Pre-University</option>
+                  
+                  {/* Undergraduate covers BS/BSc/Bachelors */}
+                  <option value="undergraduate">Undergraduate (Bachelors)</option>
+                  
+                  {/* Graduate covers MS/MSc/Masters */}
+                  <option value="graduate">Graduate (Masters/PhD)</option>
+                  
+                  {/* Professional covers people already working */}
+                  <option value="professional">Working Professional</option>
+  
                   <option value="other">Other</option>
                 </select>
               </div>

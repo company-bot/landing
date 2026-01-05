@@ -26,13 +26,13 @@ const HowItWorks = () => {
       description: 'Build real projects, solve problems, and apply what you learn with hands-on exercises.',
       color: 'cyan' as const
     },
-    {
-      icon: Award,
-      number: '04',
-      title: 'Certify',
-      description: 'Complete assessments, showcase your projects, and earn your certification.',
-      color: 'purple' as const
-    }
+    // {
+    //   icon: Award,
+    //   number: '04',
+    //   title: 'Certify',
+    //   description: 'Complete assessments, showcase your projects, and earn your certification.',
+    //   color: 'purple' as const
+    // }
   ];
 
   return (
@@ -59,7 +59,7 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (

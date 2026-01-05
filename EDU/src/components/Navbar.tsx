@@ -20,6 +20,7 @@ const Navbar = () => {
     { label: 'Home', href: '#hero' },
     { label: 'Courses', href: '#programs' },
     { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Pricing', href: '#accessible-learning' },
     { label: 'Why Us', href: '#features' },
     { label: 'Contact', href: '#contact' }
   ];
