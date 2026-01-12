@@ -118,7 +118,7 @@ const Footer = () => {
 
               {/* WhatsApp - Brand Green Hover */}
               <a 
-                href="https://wa.me/yourphonenumber" 
+                href="https://wa.me/923396275648" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#25D366] dark:hover:bg-[#25D366] group transition-all duration-300 shadow-sm"
