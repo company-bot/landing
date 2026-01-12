@@ -7,21 +7,18 @@ const HowItWorks = () => {
   const steps = [
     {
       icon: UserPlus,
-      number: '01',
       title: 'Enroll',
       description: 'Choose your course and register in minutes. Get instant access to learning materials.',
       color: 'cyan' as const
     },
     {
       icon: BookOpen,
-      number: '02',
       title: 'Learn',
       description: 'Follow structured lessons, watch tutorials, and understand concepts step by step.',
       color: 'purple' as const
     },
     {
       icon: Code,
-      number: '03',
       title: 'Practice',
       description: 'Build real projects, solve problems, and apply what you learn with hands-on exercises.',
       color: 'cyan' as const
@@ -73,7 +70,6 @@ const HowItWorks = () => {
                   <div className={`absolute -top-6 -right-6 font-display font-black text-6xl ${
                     step.color === 'cyan' ? 'text-cyan/10' : 'text-purple/10'
                   }`}>
-                    {step.number}
                   </div>
 
                   {/* Icon */}
