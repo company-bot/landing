@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Basic - SyZentric EDU</title>
+    <!-- Favicon (served from EDU/public/logo) -->
+    <link rel="icon" type="image/png" sizes="64x64" href="/logo/favicon.png?v=2" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/logo/favicon.png?v=2" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/logo/favicon.png?v=2" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          screens: {
+            'xs': '375px',
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+          },
+          extend: {
+            colors: {
+              obsidian: '#050510',
+              cyan: {
+                DEFAULT: '#7B2C9E',
+                glow: '#7B2C9E80'
+              },
+              purple: {
+                DEFAULT: '#4A1F62',
+                glow: '#4A1F6280'
+              }
+            },
+            fontFamily: {
+              sans: ['Rajdhani', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Glass morphism styles */
+      .glass-panel {
+        background: rgba(243, 244, 246, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .dark .glass-panel {
+        background: rgba(5, 5, 16, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Text glow effects */
+      .text-glow-cyan {
+        text-shadow: 0 0 10px rgba(123, 44, 158, 0.5), 0 0 20px rgba(123, 44, 158, 0.3);
+      }
+
+      .text-glow-purple {
+        text-shadow: 0 0 10px rgba(74, 31, 98, 0.5), 0 0 20px rgba(74, 31, 98, 0.3);
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(5, 5, 16, 0.1);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(123, 44, 158, 0.5);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(123, 44, 158, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/python-basic.tsx"></script>
+  </body>
+</html>

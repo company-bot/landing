@@ -7,9 +7,12 @@ const Programs = () => {
   const programs = [
     {
       icon: BookOpen,
-      title: 'Coding Logic & Python',
-      description:
-        'Learn how to think like a programmer. This course focuses on logic, problem-solving, and Python basics for absolute beginners.',
+      title: 'Python',
+      description: '',
+      levels: [
+        { name: 'BASIC', url: '/python.html?level=basic' },
+        { name: 'ADVANCED', url: '/python.html?level=advanced' }
+      ],
       color: 'cyan' as const,
       highlights: [
         'Programming Logic',
@@ -20,8 +23,11 @@ const Programs = () => {
     {
       icon: Users,
       title: 'Web Development Foundations',
-      description:
-        'Understand how websites work by building them step by step. No shortcuts, only real understanding.',
+      description: '',
+      levels: [
+        { name: 'BASIC', url: '/course.html?id=web-basic' },
+        { name: 'ADVANCED', url: '/course.html?id=web-advanced' }
+      ],
       color: 'purple' as const,
       highlights: [
         'HTML, CSS & JavaScript',
@@ -32,8 +38,11 @@ const Programs = () => {
     {
       icon: TrendingUp,
       title: 'Data Science',
-      description:
-        'Learn how data is cleaned, analyzed, and understood using simple tools and real examples.',
+      description: '',
+      levels: [
+        { name: 'BASIC', url: '/data-science.html?level=basic' },
+        { name: 'ADVANCED', url: '/data-science.html?level=advanced' }
+      ],
       color: 'cyan' as const,
       highlights: [
         'Python for EDA',
@@ -44,8 +53,11 @@ const Programs = () => {
     {
       icon: Award,
       title: 'Machine Learning Fundamentals',
-      description:
-        'Understand how machine learning works behind the scenes instead of just using ready-made tools.',
+      description: '',
+      levels: [
+        { name: 'BASIC', url: '/machine-learning.html?level=basic' },
+        { name: 'ADVANCED', url: '/machine-learning.html?level=advanced' }
+      ],
       color: 'purple' as const,
       highlights: [
         'ML Concepts & Logic',
@@ -56,8 +68,11 @@ const Programs = () => {
     {
       icon: BookOpen,
       title: 'Final Year Project Guidance',
-      description:
-        'Step-by-step help for academic projects including idea selection, coding, and documentation.',
+      description: '',
+      levels: [
+        { name: 'PLANNING', url: '/course.html?id=fyp-basic' },
+        { name: 'EXECUTION', url: '/course.html?id=fyp-advanced' }
+      ],
       color: 'cyan' as const,
       highlights: [
         'Project Planning',
@@ -68,13 +83,47 @@ const Programs = () => {
     {
       icon: Users,
       title: 'Tech Starter Program',
-      description:
-        'A beginner-friendly program for school and college students to learn logic, coding basics, and tech thinking before university.',
+      description: '',
+      levels: [
+        { name: 'LEVEL 1', url: '/course.html?id=tech-basic' },
+        { name: 'LEVEL 2', url: '/course.html?id=tech-advanced' }
+      ],
       color: 'purple' as const,
       highlights: [
         'Logic Building',
         'Intro to Coding',
         'Confidence Before University'
+      ]
+    },
+    {
+      icon: Users,
+      title: 'Coding Kids Hub',
+      description: '',
+      levels: [
+        { name: 'AGES 5-7', url: '/kids-coding.html?level=group1' },
+        { name: 'AGES 7-10', url: '/kids-coding.html?level=group2' },
+        { name: 'AGES 10-13', url: '/kids-coding.html?level=group3' }
+      ],
+      color: 'cyan' as const,
+      highlights: [
+        'Game Creation',
+        'Visual Coding',
+        'Creativity'
+      ]
+    },
+    {
+      icon: TrendingUp,
+      title: 'Logic and Math',
+      description: '',
+      levels: [
+        { name: 'BASIC', url: '/logic-math.html?level=basic' },
+        { name: 'ADVANCED', url: '/logic-math.html?level=advanced' }
+      ],
+      color: 'purple' as const,
+      highlights: [
+        'Critical Thinking',
+        'Math Puzzles',
+        'Abstract Logic'
       ]
     }
   ];
@@ -83,7 +132,7 @@ const Programs = () => {
   return (
     <section id="programs" className="relative z-10 py-20 sm:py-32 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,32 +159,41 @@ const Programs = () => {
             return (
               <GlassCard key={index} glowColor={program.color} delay={index * 0.1}>
                 <div className="flex flex-col h-full">
-                  <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${
-                    program.color === 'cyan' 
-                      ? 'from-cyan/20 to-purple/10' 
-                      : 'from-purple/20 to-cyan/10'
-                  } flex items-center justify-center mb-4`}>
+                  <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${program.color === 'cyan'
+                    ? 'from-cyan/20 to-purple/10'
+                    : 'from-purple/20 to-cyan/10'
+                    } flex items-center justify-center mb-4`}>
                     <Icon className={`w-7 h-7 ${program.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
                   </div>
-                  
+
                   <h4 className="font-display font-bold text-xl sm:text-2xl text-gray-900 dark:text-white mb-3">
                     {program.title}
                   </h4>
-                  
-                  <p className="text-gray-700 dark:text-gray-400 mb-6 flex-grow">
-                    {program.description}
-                  </p>
 
-                  <div className="space-y-2">
-                    {program.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full ${
-                          program.color === 'cyan' ? 'bg-cyan' : 'bg-purple'
-                        }`} />
-                        <span className="text-sm text-gray-600 dark:text-gray-500">{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {/* @ts-ignore */}
+                  {program.levels ? (
+                    <div className="mb-6 flex-grow flex gap-3">
+                      {/* @ts-ignore */}
+                      {program.levels.map((level) => (
+                        <a
+                          key={level.name}
+                          href={level.url}
+                          className={`flex-1 py-2 text-center rounded-lg font-bold text-sm tracking-wider border transition-all duration-300 ${program.color === 'cyan'
+                            ? 'border-cyan/50 text-cyan hover:bg-cyan hover:text-white'
+                            : 'border-purple/50 text-purple hover:bg-purple hover:text-white'
+                            }`}
+                        >
+                          {level.name}
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-gray-700 dark:text-gray-400 mb-6 flex-grow">
+                      {program.description}
+                    </p>
+                  )}
+
+                  {/* Highlights section removed as per user request */}
                 </div>
               </GlassCard>
             );
@@ -150,7 +208,7 @@ const Programs = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mt-12 sm:mt-16"
         >
-          <a 
+          <a
             href="#contact"
             onClick={(e) => {
               e.preventDefault();

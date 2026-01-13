@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Kids Hub - SyZentric EDU</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="/logo/favicon.png?v=2" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/logo/favicon.png?v=2" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050510',
+                        cyan: { DEFAULT: '#7B2C9E', glow: '#7B2C9E80' },
+                        purple: { DEFAULT: '#4A1F62', glow: '#4A1F6280' }
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        sans: ['Rajdhani', 'sans-serif'],
+                        display: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .active-tab {
+            background-color: #fef08a !important;
+            /* yellow-200 */
+            border-color: #eab308 !important;
+            /* yellow-500 */
+            color: #854d0e !important;
+            /* yellow-900 */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/kids-coding.tsx"></script>
+</body>
+
+</html>
