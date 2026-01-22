@@ -24,9 +24,9 @@ const Footer = () => {
   return (
     <footer id="contact" className="relative z-10 border-t border-gray-200 dark:border-white/10 mt-20 bg-white dark:bg-transparent transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-          
+
           {/* 1. Lead Capture Form */}
           <div className="lg:col-span-1">
             <h3 className="font-display font-bold text-xl text-gray-900 dark:text-white mb-3 flex items-center gap-2">
@@ -35,7 +35,7 @@ const Footer = () => {
             <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">
               Ready to build something exceptional? Reach out and let's discuss your infrastructure needs.
             </p>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="email"
@@ -70,19 +70,19 @@ const Footer = () => {
           {/* 2. Trust Signals */}
           <div className="lg:col-span-1">
             <h3 className="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Availability</h3>
-            
+
             <div className="mb-8 p-4 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
               <div className="flex items-center gap-3 mb-2">
                 <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative rounded-full h-3 w-3 bg-green-500"></span>
                 </div>
-                <span className="text-green-600 dark:text-green-400 font-semibold text-sm">Systems Operational</span>
+                <span className="text-green-600 dark:text-green-400 font-semibold text-sm">Available for New Projects</span>
               </div>
-              <p className="text-gray-500 dark:text-gray-400 text-xs ml-6">Available for new projects</p>
+              {/* <p className="text-gray-500 dark:text-gray-400 text-xs ml-6">Available for new projects</p> */}
             </div>
 
-            <div className="p-4 rounded-lg bg-white dark:bg-gradient-to-br dark:from-cyan/10 dark:to-purple/10 border border-gray-200 dark:border-white/10 shadow-sm">
+            {/* <div className="p-4 rounded-lg bg-white dark:bg-gradient-to-br dark:from-cyan/10 dark:to-purple/10 border border-gray-200 dark:border-white/10 shadow-sm">
               <div className="flex items-start gap-3">
                 <Globe className="w-5 h-5 text-cyan-600 dark:text-cyan mt-0.5" />
                 <div>
@@ -93,17 +93,17 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* 3. Professional Proof & Direct Chat */}
           <div className="lg:col-span-1">
             <h3 className="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Connect</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-              
+
               {/* LinkedIn - Brand Blue Hover */}
-              <a 
-                href="https://www.linkedin.com/company/syzentric/" 
+              <a
+                href="https://www.linkedin.com/company/syzentric/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#0077b5] dark:hover:bg-[#0077b5] group transition-all duration-300 shadow-sm"
@@ -117,8 +117,8 @@ const Footer = () => {
               </a>
 
               {/* WhatsApp - Brand Green Hover */}
-              <a 
-                href="https://wa.me/923396275648" 
+              <a
+                href="https://wa.me/923396275648"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#25D366] dark:hover:bg-[#25D366] group transition-all duration-300 shadow-sm"
@@ -132,8 +132,8 @@ const Footer = () => {
               </a>
 
               {/* Twitter / X - Brand Black Hover */}
-              <a 
-                href="https://x.com/syzentric" 
+              <a
+                href="https://x.com/syzentric"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-black dark:hover:bg-white group transition-all duration-300 shadow-sm"
@@ -152,7 +152,7 @@ const Footer = () => {
                   <Mail className="w-5 h-5 text-gray-600 dark:text-cyan group-hover:text-cyan-600 transition-colors" />
                 </div>
                 <div>
-                   <span className="text-gray-700 dark:text-white font-semibold block text-sm">Email</span>
+                  <span className="text-gray-700 dark:text-white font-semibold block text-sm">Email</span>
                 </div>
               </a>
 

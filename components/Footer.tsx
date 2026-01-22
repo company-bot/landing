@@ -77,9 +77,9 @@ const Footer = () => {
                   <span className="animate-ping absolute h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative rounded-full h-3 w-3 bg-green-500"></span>
                 </div>
-                <span className="text-green-600 dark:text-green-400 font-semibold text-sm">Online</span>
+                <span className="text-green-600 dark:text-green-400 font-semibold text-sm">Empowering Learning & Tech Support</span>
               </div>
-              <p className="text-gray-500 dark:text-gray-400 text-xs ml-6">Available for new projects</p>
+              {/* <p className="text-gray-500 dark:text-gray-400 text-xs ml-6">Available for new projects</p> */}
             </div>
 
             {/* <div className="p-4 rounded-lg bg-white dark:bg-gradient-to-br dark:from-cyan/10 dark:to-purple/10 border border-gray-200 dark:border-white/10 shadow-sm">
