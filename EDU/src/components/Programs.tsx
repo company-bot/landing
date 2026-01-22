@@ -25,8 +25,8 @@ const Programs = () => {
       title: 'Web Development Foundations',
       description: '',
       levels: [
-        { name: 'BASIC', url: '/course.html?id=web-basic' },
-        { name: 'ADVANCED', url: '/course.html?id=web-advanced' }
+        { name: 'BASIC', url: '/web-development.html?level=basic' },
+        { name: 'ADVANCED', url: '/web-development.html?level=advanced' }
       ],
       color: 'purple' as const,
       highlights: [
@@ -70,8 +70,8 @@ const Programs = () => {
       title: 'Final Year Project Guidance',
       description: '',
       levels: [
-        { name: 'PLANNING', url: '/course.html?id=fyp-basic' },
-        { name: 'EXECUTION', url: '/course.html?id=fyp-advanced' }
+        { name: 'BASIC', url: '/fyp.html?level=basic' },
+        { name: 'ADVANCED', url: '/fyp.html?level=advanced' }
       ],
       color: 'cyan' as const,
       highlights: [
@@ -85,8 +85,8 @@ const Programs = () => {
       title: 'Tech Starter Program',
       description: '',
       levels: [
-        { name: 'LEVEL 1', url: '/course.html?id=tech-basic' },
-        { name: 'LEVEL 2', url: '/course.html?id=tech-advanced' }
+        { name: 'BASIC', url: '/tech-starter.html?level=basic' },
+        { name: 'ADVANCED', url: '/tech-starter.html?level=advanced' }
       ],
       color: 'purple' as const,
       highlights: [

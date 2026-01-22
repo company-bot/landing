@@ -1,5 +1,5 @@
 import {
-    Binary, Cpu, Database, Terminal, Settings2, BrainCircuit, BarChart3, BookOpen
+    Binary, Cpu, Database, Terminal, Settings2, BrainCircuit, BarChart3, BookOpen, Globe, Code2, FileText
 } from 'lucide-react';
 import { HubData } from '../components/CourseHub.tsx';
 
@@ -164,6 +164,108 @@ export const pythonData: HubData = {
                 { title: "Module 8: Concurrency", topics: ["Threading", "AsyncIO", "Process Pools"] },
                 { title: "Module 9: Production Tools", topics: ["Unit Testing", "Logging", "Virtual Environments", "Dockerization"] },
                 { title: "Module 10: Specialization & Domain Intro", topics: ["Web (Django/Flask)", "Data Science (Pandas/NumPy)", "AI (Scikit-Learn)", "Automation (Selenium)"] }
+            ]
+        }
+    }
+};
+
+// --- Web Development Foundations Data ---
+export const webDevData: HubData = {
+    title: "Web Development Foundations",
+    subTitle: "Master the core technologies that power the internet. Build beautiful, responsive websites from scratch.",
+    headerIcon: Globe,
+    emptyIcon: Code2,
+    color: 'purple',
+    levels: {
+        basic: {
+            title: "Web Development Foundations - Basic",
+            description: "Start your journey into web development. Learn HTML to structure content and CSS to style it beautifully.",
+            modules: [
+                { title: "Module 1: How the Web Works", topics: ["Client-Server Architecture", "HTTP Protocol", "URLs & Domain Names", "Browser Basics"] },
+                { title: "Module 2: HTML5 Semantic Structure", topics: ["HTML Tags & Elements", "Semantic HTML", "Forms & Inputs", "Accessibility Basics"] },
+                { title: "Module 3: CSS3 Styling & Box Model", topics: ["CSS Selectors", "Box Model", "Typography", "Colors & Backgrounds"] },
+                { title: "Module 4: Flexbox & Grid Layouts", topics: ["Flexbox Fundamentals", "CSS Grid", "Responsive Layouts", "Common Patterns"] },
+                { title: "Module 5: Responsive Design Principles", topics: ["Media Queries", "Mobile-First Design", "Viewport Units", "Breakpoints"] },
+                { title: "Module 6: Building a Personal Portfolio", topics: ["Project Planning", "Multi-page Website", "Navigation", "Deployment"] }
+            ]
+        },
+        advanced: {
+            title: "Web Development Foundations - Advanced",
+            description: "Master modern web development with JavaScript and backend concepts. Build interactive, data-driven applications.",
+            modules: [
+                { title: "Module 1: JavaScript ES6+ Features", topics: ["Variables & Scope", "Arrow Functions", "Destructuring", "Modules"] },
+                { title: "Module 2: DOM Manipulation & Events", topics: ["Selecting Elements", "Event Listeners", "Dynamic Content", "Form Validation"] },
+                { title: "Module 3: Asynchronous JavaScript", topics: ["Promises", "Async/Await", "Fetch API", "Error Handling"] },
+                { title: "Module 4: Introduction to React", topics: ["Components", "Props & State", "Hooks", "Event Handling"] },
+                { title: "Module 5: Node.js & Express Basics", topics: ["Server Setup", "Routing", "Middleware", "REST APIs"] },
+                { title: "Module 6: Database Fundamentals", topics: ["SQL Basics", "CRUD Operations", "Database Design", "ORMs"] },
+                { title: "Module 7: Deployment & Hosting", topics: ["Git & GitHub", "CI/CD Basics", "Cloud Platforms", "Domain Setup"] }
+            ]
+        }
+    }
+};
+
+// --- Tech Starter Program Data ---
+export const techStarterData: HubData = {
+    title: "Tech Starter Program",
+    subTitle: "Build your confidence before university. Master fundamental computer skills and logical thinking.",
+    headerIcon: Terminal,
+    emptyIcon: BookOpen,
+    color: 'cyan',
+    levels: {
+        basic: {
+            title: "Tech Starter - Level 1",
+            description: "Fundamental computer skills and logical thinking for absolute beginners.",
+            modules: [
+                { title: "Week 1: Computer Basics", topics: ["Hardware & Software", "Operating Systems", "File Management", "Shortcuts & Productivity"] },
+                { title: "Week 2: Internet Safety", topics: ["Online Privacy", "Password Security", "Phishing Awareness", "Digital Footprint"] },
+                { title: "Week 3: Logic Puzzles", topics: ["Pattern Recognition", "Logical Thinking", "Problem Decomposition", "Critical Reasoning"] },
+                { title: "Week 4: Block-based Coding", topics: ["Scratch Introduction", "Sequences", "Loops", "Conditionals"] },
+                { title: "Week 5: Digital Citizenship", topics: ["Online Ethics", "Copyright Basics", "Digital Communication", "Tech Responsibility"] }
+            ]
+        },
+        advanced: {
+            title: "Tech Starter - Level 2",
+            description: "Transition from user to creator with introductory coding and creation tools.",
+            modules: [
+                { title: "Module 1: Introduction to Python", topics: ["Python Setup", "Variables", "Basic Operations", "Simple Programs"] },
+                { title: "Module 2: Building Simple Websites", topics: ["HTML Basics", "CSS Styling", "Creating Pages", "Publishing Online"] },
+                { title: "Module 3: Basic Graphic Design", topics: ["Design Principles", "Color Theory", "Canva/Figma Basics", "Creating Posters"] },
+                { title: "Module 4: Problem Solving Strategies", topics: ["Algorithmic Thinking", "Debugging", "Breaking Down Problems", "Testing Solutions"] },
+                { title: "Module 5: Future Tech Trends", topics: ["AI Overview", "Cloud Computing", "IoT Basics", "Career Paths in Tech"] }
+            ]
+        }
+    }
+};
+
+// --- Final Year Project Guidance Data ---
+export const fypData: HubData = {
+    title: "Final Year Project Guidance",
+    subTitle: "From idea to implementation. Get expert guidance for your academic capstone project.",
+    headerIcon: FileText,
+    emptyIcon: BookOpen,
+    color: 'purple',
+    levels: {
+        basic: {
+            title: "Final Year Project - Planning",
+            description: "Structure your ideas into a viable project proposal and plan.",
+            modules: [
+                { title: "Phase 1: Idea Generation", topics: ["Brainstorming Techniques", "Problem Identification", "Research Gap Analysis", "Feasibility Assessment"] },
+                { title: "Phase 2: Feasibility Study", topics: ["Technical Feasibility", "Resource Analysis", "Time Management", "Risk Assessment"] },
+                { title: "Phase 3: Requirement Analysis", topics: ["Functional Requirements", "Non-Functional Requirements", "User Stories", "Use Case Diagrams"] },
+                { title: "Phase 4: System Design", topics: ["Architecture Design", "Database Design", "UI/UX Mockups", "Technology Stack Selection"] },
+                { title: "Phase 5: Proposal Writing", topics: ["Abstract & Introduction", "Literature Review", "Methodology", "Timeline & Deliverables"] }
+            ]
+        },
+        advanced: {
+            title: "Final Year Project - Execution",
+            description: "Implementation, testing, and final documentation of your academic project.",
+            modules: [
+                { title: "Sprint 1: Agile Implementation", topics: ["Sprint Planning", "Version Control", "Code Organization", "Collaboration Tools"] },
+                { title: "Sprint 2: Testing Strategies", topics: ["Unit Testing", "Integration Testing", "User Acceptance Testing", "Bug Tracking"] },
+                { title: "Sprint 3: Documentation Standards", topics: ["Technical Documentation", "User Manual", "Code Comments", "API Documentation"] },
+                { title: "Sprint 4: Presentation Skills", topics: ["Slide Design", "Demo Preparation", "Storytelling", "Q&A Handling"] },
+                { title: "Sprint 5: Viva Preparation", topics: ["Common Questions", "Defense Strategies", "Confidence Building", "Final Review"] }
             ]
         }
     }

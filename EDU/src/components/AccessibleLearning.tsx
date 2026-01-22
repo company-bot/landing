@@ -135,9 +135,14 @@ const AccessibleLearning = () => {
                                 href="#contact"
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                  const target = document.getElementById('contact');
+                                  if (target) {
+                                    target.scrollIntoView({ behavior: 'smooth' });
+                                  } else {
+                                    window.location.assign('/#contact');
+                                  }
                                 }}
-                                className="inline-block px-10 py-4 bg-gradient-to-r from-cyan to-purple hover:from-cyan/90 hover:to-purple/90 text-white font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-purple/50 hover:shadow-xl hover:shadow-purple/70"
+                                className="inline-block px-10 py-4 bg-gradient-to-r from-cyan to-purple hover:from-cyan/90 hover:to-purple/90 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-purple/50 hover:shadow-xl hover:shadow-purple/70"
                               >
                                 Connect Now
                               </a>

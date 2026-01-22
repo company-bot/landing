@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Lock, Unlock, LucideIcon
-} from 'lucide-react';
+import { Lock, Unlock, LucideIcon, ChevronRight } from 'lucide-react';
 import Navbar from './Navbar.tsx';
 import Footer from './Footer.tsx';
 import Scene3D from './Scene3D.tsx';
 import { useStore } from '../store/useStore.ts';
 
-// --- Types ---
 export interface Module {
     title: string;
     topics: string[];
@@ -37,7 +34,8 @@ interface CourseHubProps {
 
 const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
     const { isDarkMode } = useStore();
-    const [activeLevel, setActiveLevel] = useState<'basic' | 'advanced' | null>(null);
+    // Defaulting to 'basic' ensures the curriculum is never empty on load
+    const [activeLevel, setActiveLevel] = useState<'basic' | 'advanced'>('basic');
 
     useEffect(() => {
         document.documentElement.classList.toggle('dark', isDarkMode);
@@ -50,52 +48,46 @@ const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
     }, [isDarkMode]);
 
     const renderContent = () => {
-        if (!activeLevel) {
-            const EmptyIcon = data.emptyIcon;
-            return (
-                <div className="flex flex-col items-center justify-center py-20 text-gray-500 dark:text-gray-400 animate-fade-in-up">
-                    <EmptyIcon className="w-20 h-20 mb-6 opacity-30" />
-                    <p className="text-xl font-display uppercase tracking-widest">Select a level to view curriculum</p>
-                </div>
-            );
-        }
-
         const levelData = data.levels[activeLevel];
+        if (!levelData) return null;
+
         const modules = levelData.modules;
         const totalModules = modules.length;
 
-        // 20% visible logic
+        // Logic to show only the first 20% of modules
         const visibleCount = Math.ceil(totalModules * 0.2);
         const visibleModules = modules.slice(0, visibleCount);
         const lockedCount = totalModules - visibleCount;
 
         return (
             <div className="animate-fade-in-up max-w-4xl mx-auto">
+                {/* Section Header */}
                 <div className="mb-12 text-center">
-                    <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-3 tracking-wide text-glow-cyan">
-                        <span className="inline-block w-2 h-8 mr-3 rounded-full align-middle bg-cyan shadow-lg shadow-cyan/50"></span>
-                        {levelData.title}
+                    <h2 className="text-4xl font-display font-black text-gray-900 dark:text-white mb-4 tracking-tighter uppercase flex items-center justify-center gap-3">
+                        <span className="text-cyan text-5xl">/</span> {levelData.title}
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl mx-auto">{levelData.description}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto font-light leading-relaxed">
+                        {levelData.description}
+                    </p>
                 </div>
 
-                <div className="space-y-4 mb-8">
+                {/* Module Cards */}
+                <div className="space-y-8 mb-16">
                     {visibleModules.map((module, index) => (
                         <div
                             key={index}
-                            className="glass-panel border border-cyan/30 dark:border-cyan/20 rounded-xl p-6 flex gap-5 items-start transition-all duration-300 hover:border-cyan/50 dark:hover:border-cyan/40 hover:shadow-lg hover:shadow-cyan/20 group relative overflow-hidden"
+                            className="glass-panel border border-white/10 dark:bg-white/5 rounded-3xl p-8 flex gap-8 items-start transition-all duration-500 hover:border-cyan/40 hover:shadow-[0_0_40px_rgba(6,182,212,0.1)] group relative overflow-hidden"
                         >
-                            {/* Subtle glow effect on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan/5 to-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-                            <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-cyan/10 dark:bg-cyan/20 text-cyan font-display font-bold rounded-lg text-lg group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-cyan/30 transition-all relative z-10">
+                            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-white/10 text-gray-400 dark:text-gray-500 font-display font-black rounded-2xl text-xl group-hover:bg-cyan group-hover:text-white transition-all duration-500 shadow-xl">
                                 {index + 1}
                             </div>
-                            <div className="relative z-10">
-                                <h4 className="font-display font-bold text-gray-900 dark:text-white text-xl mb-3">{module.title}</h4>
+                            <div className="flex-grow">
+                                <h4 className="font-display font-bold text-gray-900 dark:text-white text-2xl mb-4 uppercase tracking-wide">
+                                    {module.title}
+                                </h4>
                                 <div className="flex flex-wrap gap-2">
                                     {module.topics.map((t, i) => (
-                                        <span key={i} className="inline-flex items-center px-3 py-1 rounded-md text-xs font-mono uppercase tracking-wide bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10">
+                                        <span key={i} className="px-4 py-2 rounded-xl text-[10px] font-mono font-bold uppercase tracking-widest bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-transparent group-hover:border-cyan/20 transition-all">
                                             {t}
                                         </span>
                                     ))}
@@ -105,33 +97,54 @@ const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
                     ))}
                 </div>
 
-                {/* Locked Section */}
-                {lockedCount > 0 && (
-                    <div className="relative mt-8 p-1 rounded-2xl bg-gradient-to-br from-cyan/20 to-purple/20 dark:from-cyan/10 dark:to-purple/10">
-                        <div className="relative rounded-2xl glass-panel border border-cyan/30 dark:border-cyan/20 p-10 text-center overflow-hidden">
-                            {/* Glow effects */}
-                            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-cyan opacity-20 dark:opacity-30 blur-[80px] rounded-full pointer-events-none"></div>
-                            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-purple opacity-20 dark:opacity-30 blur-[80px] rounded-full pointer-events-none"></div>
+                {/* THE UNLOCK SECTION - Improved Visibility */}
+{/* COMPACT UNLOCK SECTION */}
+{lockedCount > 0 && (
+    <div className="relative mt-12 max-w-2xl mx-auto group">
+        {/* Animated Background Aura */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+        
+        <div className="relative bg-white/80 dark:bg-obsidian/90 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-[2rem] p-8 md:p-12 overflow-hidden shadow-2xl">
+            
+            {/* Artistic Decorative Elements */}
+            <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-                            <div className="relative z-10 flex flex-col items-center">
-                                <div className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg mb-6 bg-gradient-to-br from-cyan to-purple">
-                                    <Lock className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide">Unlock Full Curriculum</h3>
-                                <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg text-lg">
-                                    Get access to the remaining <span className="text-cyan font-bold">{lockedCount} modules</span>, including advanced projects, mentorship, and certification.
-                                </p>
-                                <a
-                                    href="/contact.html"
-                                    className="inline-flex items-center gap-3 px-10 py-4 bg-cyan hover:bg-cyan/90 text-white font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-cyan/50 hover:shadow-xl hover:shadow-cyan/70"
-                                >
-                                    <Unlock className="w-5 h-5" />
-                                    Enroll Now
-                                </a>
-                            </div>
-                        </div>
+            <div className="relative z-10 flex flex-col items-center">
+                {/* Minimalist Lock Badge */}
+                <div className="relative mb-8">
+                    <div className="absolute inset-0 bg-purple-500 blur-lg opacity-40 animate-pulse"></div>
+                    <div className="relative w-16 h-16 bg-obsidian dark:bg-white rounded-2xl flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-2xl">
+                        <Lock className="w-6 h-6 text-white dark:text-purple-600" />
                     </div>
-                )}
+                </div>
+
+                <div className="space-y-2 mb-8 text-center">
+                    <span className="text-[10px] font-black tracking-[0.3em] text-purple-500 uppercase">Premium Content</span>
+                    <h3 className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white tracking-tight">
+                        Unlock The <span className="italic font-serif">Full</span> Curriculum
+                    </h3>
+                    <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full"></div>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-sm text-base leading-relaxed">
+                    Ready to go pro? You have <span className="text-gray-900 dark:text-white font-bold px-1.5 py-0.5 bg-purple-100 dark:bg-purple-900/30 rounded">{lockedCount} premium modules</span> left to master.
+                </p>
+                
+                {/* The Modernized Button */}
+                <a
+                    href="/contact.html"
+                    className="group/btn relative inline-flex items-center justify-center px-12 py-4 font-bold text-white transition-all duration-200 bg-gray-900 font-display dark:bg-white dark:text-black rounded-xl hover:bg-purple-600 dark:hover:bg-purple-500 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                >
+                    <span className="relative flex items-center gap-2 uppercase tracking-widest text-xs">
+                        Access Now
+                        <Unlock className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+)}
             </div>
         );
     };
@@ -139,53 +152,50 @@ const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
     const Icon = data.headerIcon;
 
     return (
-        <div className="min-h-screen bg-white dark:bg-obsidian text-gray-900 dark:text-gray-200 selection:bg-cyan/30 selection:text-white relative transition-colors duration-300">
+        <div className="min-h-screen bg-white dark:bg-obsidian text-gray-900 dark:text-gray-200 relative transition-colors duration-300">
             <div className="relative z-10 flex flex-col min-h-screen">
                 <Navbar />
 
-                <main className="flex-grow pt-32 pb-20 px-4 max-w-7xl mx-auto w-full">
-
-                    {/* Header Section */}
-                    <div className="text-center mb-16 animate-fade-in-up">
-                        <div className="inline-block p-4 rounded-2xl glass-panel border border-cyan/30 dark:border-cyan/20 mb-6 shadow-2xl shadow-cyan/20">
-                            <Icon className="w-12 h-12 text-cyan drop-shadow-[0_0_15px_rgba(123,44,158,0.5)]" />
+                <main className="flex-grow pt-32 pb-20 px-6 max-w-7xl mx-auto w-full">
+                    {/* Main Header */}
+                    <div className="text-center mb-16 animate-fade-in">
+                        <div className="inline-block p-4 rounded-3xl glass-panel border border-purple/20 mb-8 shadow-2xl">
+                            <Icon className="w-12 h-12 text-purple drop-shadow-[0_0_15px_rgba(128,0,128,0.3)]" />
                         </div>
-                        <h1 className="font-display font-black text-5xl md:text-7xl text-gray-900 dark:text-white mb-6 uppercase tracking-tight text-glow-cyan">
+                        <h1 className="font-display font-black text-5xl md:text-7xl text-gray-900 dark:text-white mb-6 uppercase tracking-tighter leading-[0.9]">
                             {data.title}
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                            {data.subTitle}
-                        </p>
                     </div>
 
-                    {/* Levels Navigation */}
-                    <div className="flex justify-center mb-16">
-                        <div className="flex p-1 glass-panel rounded-xl border border-cyan/30 dark:border-cyan/20">
+                    {/* LEVEL NAVIGATION - Rounded pills style from your image */}
+                    <div className="flex justify-center mb-24">
+                        <div className="inline-flex p-2 bg-purple-100/80 dark:bg-white/5 backdrop-blur-2xl rounded-[2rem] border border-purple-200 dark:border-purple/10 shadow-xl">
                             {['basic', 'advanced'].map((level) => (
                                 <button
                                     key={level}
                                     onClick={() => setActiveLevel(level as 'basic' | 'advanced')}
-                                    className={`px-8 py-3 rounded-lg font-display font-bold text-sm uppercase tracking-widest transition-all duration-300 ${activeLevel === level
-                                        ? 'bg-cyan text-white shadow-lg shadow-cyan/50'
-                                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-white/50 dark:hover:bg-white/5'
-                                        }`}
+                                    className={`relative px-14 py-4 rounded-[1.8rem] font-display font-black text-[15px] uppercase tracking-[0.2em] transition-all duration-700 ${
+                                        activeLevel === level
+                                            ? 'text-purple-600 dark:text-purple'
+                                            : 'text-purple-400 hover:text-purple-600 dark:hover:text-purple-300'
+                                    }`}
                                 >
-                                    {level}
+                                    {activeLevel === level && (
+                                        <div className="absolute inset-0 bg-white dark:bg-purple rounded-[1.8rem] shadow-xl animate-in zoom-in-95 duration-500"></div>
+                                    )}
+                                    <span className="relative z-10">{level}</span>
                                 </button>
                             ))}
                         </div>
                     </div>
 
-                    {/* Content Area */}
-                    <div className="min-h-[400px]">
+                    <div className="min-h-[600px]">
                         {renderContent()}
                     </div>
-
                 </main>
 
                 <Footer />
             </div>
-
             <Scene3D />
         </div>
     );

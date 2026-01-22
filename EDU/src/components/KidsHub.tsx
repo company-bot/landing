@@ -125,7 +125,7 @@ const KidsHub: React.FC<KidsHubProps> = ({ data }) => {
                                 </p>
                                 <a
                                     href="/contact.html"
-                                    className="inline-flex items-center gap-3 px-10 py-4 bg-cyan hover:bg-cyan/90 text-white font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-cyan/50 hover:shadow-xl hover:shadow-cyan/70"
+                                    className="inline-flex items-center gap-3 px-10 py-4 bg-cyan hover:bg-cyan/90 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-cyan/50 hover:shadow-xl hover:shadow-cyan/70"
                                 >
                                     <Unlock className="w-5 h-5" />
                                     Enroll Now
