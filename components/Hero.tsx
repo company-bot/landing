@@ -48,7 +48,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-400 font-sans leading-relaxed glass-panel p-4 sm:p-6 rounded-lg"
         >
-          Transforming ideas into reality through cutting-edge technology and innovative education.
+         <b> We build the Technology <br/> You master the Understanding</b>
         </motion.p>
 
         {/* Cards for Tech and Education */}
