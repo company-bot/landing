@@ -8,7 +8,12 @@ const Programs = () => {
     {
       icon: BookOpen,
       title: 'Python',
-      description: '',
+      description: 'From syntax basics to real-world scripting and automation.',
+      details: [
+        'Hands-on with functions, files, and error handling',
+        'Automate tasks and call web APIs',
+        'Build confidence with mini projects'
+      ],
       levels: [
         { name: 'BASIC', url: '/python.html?level=basic' },
         { name: 'ADVANCED', url: '/python.html?level=advanced' }
@@ -23,7 +28,12 @@ const Programs = () => {
     {
       icon: Users,
       title: 'Web Development Foundations',
-      description: '',
+      description: 'Build responsive sites with HTML, CSS, JavaScript, and backend basics.',
+      details: [
+        'Structure pages with semantic HTML and modern CSS layouts',
+        'Add interactivity with JavaScript and React basics',
+        'Learn routing, simple APIs, and deployment steps'
+      ],
       levels: [
         { name: 'BASIC', url: '/web-development.html?level=basic' },
         { name: 'ADVANCED', url: '/web-development.html?level=advanced' }
@@ -38,7 +48,12 @@ const Programs = () => {
     {
       icon: TrendingUp,
       title: 'Data Science',
-      description: '',
+      description: 'Learn data wrangling, visualization, and analysis to find insights.',
+      details: [
+        'Clean and shape data with Pandas and NumPy',
+        'Visualize trends and patterns with practical charts',
+        'Run EDA to answer real questions from data'
+      ],
       levels: [
         { name: 'BASIC', url: '/data-science.html?level=basic' },
         { name: 'ADVANCED', url: '/data-science.html?level=advanced' }
@@ -53,7 +68,12 @@ const Programs = () => {
     {
       icon: Award,
       title: 'Machine Learning Fundamentals',
-      description: '',
+      description: 'Understand core ML algorithms, model training, and evaluation.',
+      details: [
+        'Regression and classification workflows end to end',
+        'Train, validate, and tune models responsibly',
+        'Build mini ML projects you can showcase'
+      ],
       levels: [
         { name: 'BASIC', url: '/machine-learning.html?level=basic' },
         { name: 'ADVANCED', url: '/machine-learning.html?level=advanced' }
@@ -68,7 +88,12 @@ const Programs = () => {
     {
       icon: BookOpen,
       title: 'Final Year Project Guidance',
-      description: '',
+      description: 'Plan, build, and present your academic capstone with expert support.',
+      details: [
+        'Narrow your topic, scope, and deliverables',
+        'Design docs, architecture, and implementation coaching',
+        'Report writing, demo prep, and viva practice'
+      ],
       levels: [
         { name: 'BASIC', url: '/fyp.html?level=basic' },
         { name: 'ADVANCED', url: '/fyp.html?level=advanced' }
@@ -83,7 +108,12 @@ const Programs = () => {
     {
       icon: Users,
       title: 'Tech Starter Program',
-      description: '',
+      description: 'Kickstart computer skills, logic building, and coding confidence.',
+      details: [
+        'Master digital basics and safe online habits',
+        'Solve logic puzzles to sharpen thinking',
+        'Create with block coding before moving to text'
+      ],
       levels: [
         { name: 'BASIC', url: '/tech-starter.html?level=basic' },
         { name: 'ADVANCED', url: '/tech-starter.html?level=advanced' }
@@ -98,7 +128,12 @@ const Programs = () => {
     {
       icon: Users,
       title: 'Coding Kids Hub',
-      description: '',
+      description: 'Age-based pathways for kids to code through games, stories, and projects.',
+      details: [
+        'Game-style challenges tailored to each age band',
+        'Block coding, storytelling, and creative builds',
+        'Safe intro to web and Python as they level up'
+      ],
       levels: [
         { name: 'AGES 5-7', url: '/kids-coding.html?level=group1' },
         { name: 'AGES 7-10', url: '/kids-coding.html?level=group2' },
@@ -114,7 +149,12 @@ const Programs = () => {
     {
       icon: TrendingUp,
       title: 'Logic and Math',
-      description: '',
+      description: 'Strengthen problem solving with applied logic, puzzles, and math for CS.',
+      details: [
+        'Critical thinking drills with puzzles and games',
+        'Link math concepts directly to coding use cases',
+        'Compete-ready practice for logical reasoning'
+      ],
       levels: [
         { name: 'BASIC', url: '/logic-math.html?level=basic' },
         { name: 'ADVANCED', url: '/logic-math.html?level=advanced' }
@@ -169,6 +209,19 @@ const Programs = () => {
                   <h4 className="font-display font-bold text-xl sm:text-2xl text-gray-900 dark:text-white mb-3">
                     {program.title}
                   </h4>
+
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-5 leading-relaxed">
+                    {program.description}
+                  </p>
+
+                  {program.details && (
+                    <ul className="text-sm text-gray-700 dark:text-gray-400 space-y-2 mb-5 list-disc list-inside">
+                      {/* @ts-ignore */}
+                      {program.details.map((item: string, i: number) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
 
                   {/* @ts-ignore */}
                   {program.levels ? (

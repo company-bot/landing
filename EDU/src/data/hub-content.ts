@@ -1,5 +1,5 @@
 import {
-    Binary, Cpu, Database, Terminal, Settings2, BrainCircuit, BarChart3, BookOpen, Globe, Code2, FileText
+    Binary, Cpu, Database, Terminal, Settings2, BrainCircuit, BarChart3, BookOpen, Globe, Code2, FileText, Calculator, Brain, Code, Rocket, Gamepad2
 } from 'lucide-react';
 import { HubData } from '../components/CourseHub.tsx';
 
@@ -7,8 +7,8 @@ import { HubData } from '../components/CourseHub.tsx';
 export const logicData: HubData = {
     title: "Logic & Math",
     subTitle: 'Understand the "Why" behind the code. Learn how mathematical concepts power the biggest domains in Computer Science.',
-    headerIcon: Binary,
-    emptyIcon: BrainCircuit,
+    headerIcon: Calculator,
+    emptyIcon: Brain,
     color: 'teal',
     levels: {
         basic: {
@@ -43,8 +43,8 @@ export const logicData: HubData = {
 export const mlData: HubData = {
     title: "Machine Learning",
     subTitle: "From algorithmic foundations to building autonomous systems. Master the science of teaching machines.",
-    headerIcon: Cpu,
-    emptyIcon: Settings2,
+    headerIcon: Brain,
+    emptyIcon: Cpu,
     color: 'red',
     levels: {
         basic: {
@@ -130,8 +130,8 @@ export const dataScienceData: HubData = {
 export const pythonData: HubData = {
     title: "Python",
     subTitle: "Choose your learning path. Master the fundamentals or take the fast-track to professional specialization.",
-    headerIcon: Terminal,
-    emptyIcon: BookOpen,
+    headerIcon: Code,
+    emptyIcon: Terminal,
     color: 'blue',
     levels: {
         basic: {
@@ -209,8 +209,8 @@ export const webDevData: HubData = {
 export const techStarterData: HubData = {
     title: "Tech Starter Program",
     subTitle: "Build your confidence before university. Master fundamental computer skills and logical thinking.",
-    headerIcon: Terminal,
-    emptyIcon: BookOpen,
+    headerIcon: Rocket,
+    emptyIcon: Gamepad2,
     color: 'cyan',
     levels: {
         basic: {
@@ -271,18 +271,13 @@ export const fypData: HubData = {
     }
 };
 
-import {
-    Rocket, Gamepad2
-} from 'lucide-react';
-import { KidsHubData } from '../components/KidsHub.tsx';
-
-export const kidsData: KidsHubData = {
+export const kidsData: HubData = {
     title: "Coding Kids Hub",
     subTitle: "Fun and interactive coding lessons designed specifically for kids to spark creativity and logical thinking.",
     headerIcon: Rocket,
     emptyIcon: Gamepad2,
     color: 'cyan',
-    groups: {
+    levels: {
         group1: {
             title: "Little Explorers (Ages 5-7)",
             description: "Learn how computers think through play and games! No typing required.",

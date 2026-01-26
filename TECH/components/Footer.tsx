@@ -71,7 +71,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h3 className="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Availability</h3>
             
-            <div className="mb-8 p-4 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
+            <div className="p-4 rounded-lg bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
               <div className="flex items-center gap-3 mb-2">
                 <div className="relative flex h-3 w-3">
                   <span className="animate-ping absolute h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -80,19 +80,6 @@ const Footer = () => {
                 <span className="text-green-600 dark:text-green-400 font-semibold text-sm">Systems Operational</span>
               </div>
               <p className="text-gray-500 dark:text-gray-400 text-xs ml-6">Available for new projects</p>
-            </div>
-
-            <div className="p-4 rounded-lg bg-white dark:bg-gradient-to-br dark:from-cyan/10 dark:to-purple/10 border border-gray-200 dark:border-white/10 shadow-sm">
-              <div className="flex items-start gap-3">
-                <Globe className="w-5 h-5 text-cyan-600 dark:text-cyan mt-0.5" />
-                <div>
-                  <h4 className="text-gray-900 dark:text-white font-semibold text-sm mb-2">Global Support</h4>
-                  <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
-                    <p>🇪🇺 EU: 9 AM - 6 PM CET</p>
-                    <p>🇺🇸 US: 9 AM - 6 PM EST</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -109,7 +96,7 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#0077b5] dark:hover:bg-[#0077b5] group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <Linkedin className="w-5 h-5 text-[#0077b5] dark:text-white group-hover:text-white transition-colors duration-300" />
+                  <Linkedin className="w-5 h-5 text-[#0077b5] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">LinkedIn</span>
@@ -124,7 +111,7 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#25D366] dark:hover:bg-[#25D366] group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <MessageCircle className="w-5 h-5 text-[#25D366] dark:text-white group-hover:text-white transition-colors duration-300" />
+                  <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">WhatsApp</span>
@@ -139,17 +126,17 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-black dark:hover:bg-white group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <Twitter className="w-5 h-5 text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300" />
+                  <Twitter className="w-5 h-5 text-black group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white dark:group-hover:text-black">Twitter / X</span>
+                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">Twitter / X</span>
                 </div>
               </a>
 
               {/* Email */}
               <a href="mailto:syzentric@gmail.com" className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-cyan-500 group transition-all shadow-sm">
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-cyan-500/10">
-                  <Mail className="w-5 h-5 text-gray-600 dark:text-cyan group-hover:text-cyan-600 transition-colors" />
+                  <Mail className="w-5 h-5 text-gray-600 group-hover:text-cyan-600 transition-colors" />
                 </div>
                 <div>
                    <span className="text-gray-700 dark:text-white font-semibold block text-sm">Email</span>
@@ -161,12 +148,8 @@ const Footer = () => {
         </div>
 
         {/* Legal Bar */}
-        <div className="pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-xs text-gray-400">© {currentYear} SyZentric Technology.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-xs text-gray-400 hover:text-cyan-600 dark:hover:text-cyan transition-colors">Privacy</a>
-            <a href="#" className="text-xs text-gray-400 hover:text-cyan-600 dark:hover:text-cyan transition-colors">Terms</a>
-          </div>
         </div>
       </div>
     </footer>

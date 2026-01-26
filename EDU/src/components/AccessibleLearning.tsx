@@ -25,19 +25,19 @@ const AccessibleLearning = () => {
       badge: 'Student Friendly Budget',
       color: 'purple' as const,
       features: [
-      'Full course materials',
-      'Step-by-step projects',
-      'Mentor support',
-      'Financial aid available for deserving students'
-    ],
-    affordabilityNote: 'Cheaper than a monthly mobile data plan.'
+        'Full course materials',
+        'Step-by-step projects',
+        'Mentor support',
+        'Financial aid available for deserving students'
+      ],
+      affordabilityNote: 'Cheaper than a monthly mobile data plan.'
     }
   ];
 
   return (
     <section id="accessible-learning" className="relative z-10 py-20 sm:py-32 px-4 sm:px-6 bg-gradient-to-b from-transparent via-purple/5 to-transparent dark:via-purple/2">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const AccessibleLearning = () => {
             Learn at Your <span className="text-glow-purple">Own Pace</span>
           </h3>
           <p className="mt-6 text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
-            We believe learning should be accessible to everyone. Start exploring for free, 
+            We believe learning should be accessible to everyone. Start exploring for free
             then decide if you want to continue with structured guidance.
           </p>
         </motion.div>
@@ -63,37 +63,34 @@ const AccessibleLearning = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <GlassCard 
-                key={index} 
-                glowColor={step.color} 
+              <GlassCard
+                key={index}
+                glowColor={step.color}
                 delay={index * 0.2}
               >
                 <div className="flex flex-col h-full">
                   {/* Badge */}
-                  <div className={`inline-flex items-center gap-2 self-start px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 ${
-                    step.color === 'cyan'
+                  <div className={`inline-flex items-center gap-2 self-start px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 ${step.color === 'cyan'
                       ? 'bg-cyan/20 text-cyan'
                       : 'bg-purple/20 text-purple'
-                  }`}>
+                    }`}>
                     {step.badge}
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${
-                    step.color === 'cyan' 
-                      ? 'from-cyan/20 to-purple/10' 
+                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color === 'cyan'
+                      ? 'from-cyan/20 to-purple/10'
                       : 'from-purple/20 to-cyan/10'
-                  } flex items-center justify-center mb-6`}>
+                    } flex items-center justify-center mb-6`}>
                     <Icon className={`w-8 h-8 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
                   </div>
-                  
+
                   {/* Title */}
-                  <h4 className={`font-display font-bold text-2xl sm:text-3xl mb-4 ${
-                    step.color === 'cyan' ? 'text-cyan' : 'text-purple'
-                  }`}>
+                  <h4 className={`font-display font-bold text-2xl sm:text-3xl mb-4 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'
+                    }`}>
                     {step.title}
                   </h4>
-                  
+
                   {/* Description */}
                   <p className="text-base sm:text-lg text-gray-700 dark:text-gray-400 mb-6 leading-relaxed">
                     {step.description}
@@ -102,51 +99,72 @@ const AccessibleLearning = () => {
                   {/* Features */}
                   <div className="space-y-3 flex-grow">
                     {step.features.map((feature, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className="flex items-start gap-3"
                       >
-                        <div className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${
-                          step.color === 'cyan' ? 'bg-cyan' : 'bg-purple'
-                        }`} />
+                        <div className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${step.color === 'cyan' ? 'bg-cyan' : 'bg-purple'
+                          }`} />
                         <span className="text-sm sm:text-base text-gray-600 dark:text-gray-500">
                           {feature}
                         </span>
                       </div>
                     ))
                     }
-                    {step.affordabilityNote && (
-                    <div className="mt-6 p-3 bg-purple/5 border border-purple/10 rounded-lg italic text-lg text-purple/80">
-                      " {step.affordabilityNote} "
+                  </div>
+
+                  {/* Affordability Note & Enroll Button */}
+                  {step.affordabilityNote && (
+                    <div className="mt-6 p-3 bg-purple/5 border border-purple/10 rounded-lg">
+                      <div className="flex items-center justify-center gap-3">
+                        <p className="italic text-sm text-purple/80">{step.affordabilityNote}</p>
+                        <a
+                          href="#contact"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const target = document.getElementById('contact');
+                            if (target) {
+                              target.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                              window.location.assign('/#contact');
+                            }
+                          }}
+                          className="px-6 py-2 bg-gradient-to-r from-purple to-cyan hover:from-purple/90 hover:to-cyan/90 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] font-display uppercase tracking-wider text-xs font-bold transition-all duration-300 shadow-lg shadow-purple/50 hover:shadow-xl hover:shadow-purple/70 rounded whitespace-nowrap"
+                        >
+                          Enroll Now
+                        </a>
+                      </div>
                     </div>
                   )}
-                  </div>
 
                   {/* CTA */}
                   {index === 0 && (
-                     <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.8, delay: 0.6 }}
-                              className="text-center mt-12 sm:mt-16"
-                            >
-                              <a 
-                                href="#contact"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  const target = document.getElementById('contact');
-                                  if (target) {
-                                    target.scrollIntoView({ behavior: 'smooth' });
-                                  } else {
-                                    window.location.assign('/#contact');
-                                  }
-                                }}
-                                className="inline-block px-10 py-4 bg-gradient-to-r from-cyan to-purple hover:from-cyan/90 hover:to-purple/90 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] font-display uppercase tracking-widest text-sm font-bold transition-all duration-300 shadow-lg shadow-purple/50 hover:shadow-xl hover:shadow-purple/70"
-                              >
-                                Connect Now
-                              </a>
-                            </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      className="mt-6 p-3 bg-purple/5 border border-purple/10 rounded-lg"
+                    >
+                      <div className="flex items-center justify-center gap-3">
+                        <p className="text-sm text-purple/70 italic">Ready to get started?</p>
+                        <a
+                          href="#contact"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const target = document.getElementById('contact');
+                            if (target) {
+                              target.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                              window.location.assign('/#contact');
+                            }
+                          }}
+                          className="px-6 py-2 bg-gradient-to-r from-cyan to-purple hover:from-cyan/90 hover:to-purple/90 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] font-display uppercase tracking-wider text-xs font-bold transition-all duration-300 shadow-lg shadow-purple/50 hover:shadow-xl hover:shadow-purple/70 rounded whitespace-nowrap"
+                        >
+                          Connect Now
+                        </a>
+                      </div>
+                    </motion.div>
                   )}
                 </div>
               </GlassCard>
@@ -164,8 +182,8 @@ const AccessibleLearning = () => {
         >
           <div className="glass-panel inline-block px-6 sm:px-8 py-4 sm:py-5 rounded-lg max-w-4xl">
             <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 leading-relaxed">
-              <span className="font-bold text-gray-900 dark:text-white">No pressure, no hidden costs.</span> 
-              {' '}Our goal is to help you understand your options and make an informed decision about your learning journey. 
+              <span className="font-bold text-gray-900 dark:text-white">No pressure, no hidden costs.</span>
+              {' '}Our goal is to help you understand your options and make an informed decision about your learning journey.
               The small fee for structured courses helps us maintain quality materials and provide dedicated support.
             </p>
           </div>

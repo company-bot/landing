@@ -109,7 +109,7 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#0077b5] dark:hover:bg-[#0077b5] group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <Linkedin className="w-5 h-5 text-[#0077b5] dark:text-white group-hover:text-white transition-colors duration-300" />
+                  <Linkedin className="w-5 h-5 text-[#0077b5] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">LinkedIn</span>
@@ -124,7 +124,7 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#25D366] dark:hover:bg-[#25D366] group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <MessageCircle className="w-5 h-5 text-[#25D366] dark:text-white group-hover:text-white transition-colors duration-300" />
+                  <MessageCircle className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
                   <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">WhatsApp</span>
@@ -139,17 +139,17 @@ const Footer = () => {
                 className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-black dark:hover:bg-white group transition-all duration-300 shadow-sm"
               >
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
-                  <Twitter className="w-5 h-5 text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300" />
+                  <Twitter className="w-5 h-5 text-black group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white dark:group-hover:text-black">Twitter / X</span>
+                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">Twitter / X</span>
                 </div>
               </a>
 
               {/* Email */}
               <a href="mailto:syzentric@gmail.com" className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-cyan-500 group transition-all shadow-sm">
                 <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-cyan-500/10">
-                  <Mail className="w-5 h-5 text-gray-600 dark:text-cyan group-hover:text-cyan-600 transition-colors" />
+                  <Mail className="w-5 h-5 text-gray-600 group-hover:text-cyan-600 transition-colors" />
                 </div>
                 <div>
                    <span className="text-gray-700 dark:text-white font-semibold block text-sm">Email</span>
@@ -161,12 +161,8 @@ const Footer = () => {
         </div>
 
         {/* Legal Bar */}
-        <div className="pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-center items-center gap-4">
           <p className="text-xs text-gray-400">© {currentYear} SyZentric Technology.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-xs text-gray-400 hover:text-cyan-600 dark:hover:text-cyan transition-colors">Privacy</a>
-            <a href="#" className="text-xs text-gray-400 hover:text-cyan-600 dark:hover:text-cyan transition-colors">Terms</a>
-          </div>
         </div>
       </div>
     </footer>

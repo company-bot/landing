@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import KidsHub from './components/KidsHub.tsx';
+import CourseHub from './components/CourseHub.tsx';
 import { kidsData } from './data/hub-content.ts';
 
 const rootElement = document.getElementById('root');
@@ -11,6 +11,6 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 root.render(
     <React.StrictMode>
-        <KidsHub data={kidsData} />
+        <CourseHub data={kidsData} />
     </React.StrictMode>
 );

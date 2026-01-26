@@ -22,10 +22,8 @@ export interface HubData {
     headerIcon: LucideIcon;
     emptyIcon: LucideIcon;
     color: 'cyan' | 'purple' | 'teal' | 'red' | 'blue';
-    levels: {
-        basic: LevelData;
-        advanced: LevelData;
-    };
+    // Allow any set of level keys (basic/advanced or age groups)
+    levels: Record<string, LevelData>;
 }
 
 interface CourseHubProps {
@@ -34,18 +32,28 @@ interface CourseHubProps {
 
 const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
     const { isDarkMode } = useStore();
-    // Defaulting to 'basic' ensures the curriculum is never empty on load
-    const [activeLevel, setActiveLevel] = useState<'basic' | 'advanced'>('basic');
+    const levelKeys = Object.keys(data.levels);
+
+    // Choose a stable default level: URL param > basic > first available
+    const getInitialLevel = () => {
+        const params = new URLSearchParams(window.location.search);
+        const levelParam = params.get('level');
+        if (levelParam && data.levels[levelParam]) return levelParam;
+        if (data.levels.basic) return 'basic';
+        return levelKeys[0];
+    };
+
+    const [activeLevel, setActiveLevel] = useState<string>(getInitialLevel());
 
     useEffect(() => {
         document.documentElement.classList.toggle('dark', isDarkMode);
 
         const params = new URLSearchParams(window.location.search);
         const levelParam = params.get('level');
-        if (levelParam === 'basic' || levelParam === 'advanced') {
+        if (levelParam && data.levels[levelParam]) {
             setActiveLevel(levelParam);
         }
-    }, [isDarkMode]);
+    }, [isDarkMode, data.levels]);
 
     const renderContent = () => {
         const levelData = data.levels[activeLevel];
@@ -169,12 +177,12 @@ const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
 
                     {/* LEVEL NAVIGATION - Rounded pills style from your image */}
                     <div className="flex justify-center mb-24">
-                        <div className="inline-flex p-2 bg-purple-100/80 dark:bg-white/5 backdrop-blur-2xl rounded-[2rem] border border-purple-200 dark:border-purple/10 shadow-xl">
-                            {['basic', 'advanced'].map((level) => (
+                        <div className="inline-flex p-2 bg-purple-100/80 dark:bg-white/5 backdrop-blur-2xl rounded-[2rem] border border-purple-200 dark:border-purple/10 shadow-xl flex-wrap gap-2 justify-center">
+                            {levelKeys.map((level) => (
                                 <button
                                     key={level}
-                                    onClick={() => setActiveLevel(level as 'basic' | 'advanced')}
-                                    className={`relative px-14 py-4 rounded-[1.8rem] font-display font-black text-[15px] uppercase tracking-[0.2em] transition-all duration-700 ${
+                                    onClick={() => setActiveLevel(level)}
+                                    className={`relative px-10 md:px-14 py-4 rounded-[1.8rem] font-display font-black text-[15px] uppercase tracking-[0.15em] transition-all duration-700 ${
                                         activeLevel === level
                                             ? 'text-purple-600 dark:text-purple'
                                             : 'text-purple-400 hover:text-purple-600 dark:hover:text-purple-300'
@@ -183,7 +191,7 @@ const CourseHub: React.FC<CourseHubProps> = ({ data }) => {
                                     {activeLevel === level && (
                                         <div className="absolute inset-0 bg-white dark:bg-purple rounded-[1.8rem] shadow-xl animate-in zoom-in-95 duration-500"></div>
                                     )}
-                                    <span className="relative z-10">{level}</span>
+                                    <span className="relative z-10">{level.replace(/-/g, ' ')}</span>
                                 </button>
                             ))}
                         </div>
