@@ -63,7 +63,7 @@ const Hero = () => {
             href="https://tech.syzentric.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="card-hover glass-panel p-8 rounded-2xl group cursor-pointer"
+            className="card-hover glass-panel p-8 rounded-2xl group cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-cyan/50 dark:hover:border-cyan/50 transition-colors bg-white/50 dark:bg-gray-900/50"
           >
             <div className="flex flex-col items-center space-y-4">
               <div className="p-4 rounded-full bg-cyan/10 group-hover:bg-cyan/20 transition-colors">
@@ -87,11 +87,11 @@ const Hero = () => {
             href="https://learn.syzentric.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="card-hover glass-panel p-8 rounded-2xl group cursor-pointer"
+            className="card-hover glass-panel p-8 rounded-2xl group cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-cyan/50 dark:hover:border-cyan/50 transition-colors bg-white/50 dark:bg-gray-900/50"
           >
             <div className="flex flex-col items-center space-y-4">
-              <div className="p-4 rounded-full bg-purple/10 group-hover:bg-purple/20 transition-colors">
-                <GraduationCap className="w-12 h-12 text-purple" />
+              <div className="p-4 rounded-full bg-cyan/10 group-hover:bg-cyan/20 transition-colors">
+                <GraduationCap className="w-12 h-12 text-cyan" />
               </div>
               <h3 className="font-display font-bold text-2xl text-gray-900 dark:text-white">
                 Education
@@ -99,7 +99,7 @@ const Hero = () => {
               <p className="text-gray-600 dark:text-gray-400 text-center">
                 Empowering minds with knowledge and skills for the future of technology.
               </p>
-              <div className="flex items-center gap-2 text-purple font-semibold group-hover:gap-3 transition-all">
+              <div className="flex items-center gap-2 text-cyan font-semibold group-hover:gap-3 transition-all">
                 <span>Explore Learning</span>
                 <ArrowRight className="w-5 h-5" />
               </div>
