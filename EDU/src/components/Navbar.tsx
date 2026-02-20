@@ -33,7 +33,12 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
       window.history.pushState(null, '', href);
+      return;
     }
+
+    // If the target section is not on this page (e.g., detail pages), navigate back to the landing page anchor
+    const target = href.startsWith('#') ? `/${href}` : href;
+    window.location.assign(target);
   };
 
   return (
