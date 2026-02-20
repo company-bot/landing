@@ -3,14 +3,15 @@ import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import Scene3D from './components/Scene3D.tsx';
 import { useStore } from './store/useStore.ts';
+import { Week } from './data/courses.ts';
 
 interface CoursePageProps {
     title: string;
     description: string;
-    syllabus: string[];
+    weeks: Week[];
 }
 
-const CoursePage: React.FC<CoursePageProps> = ({ title, description, syllabus }) => {
+const CoursePage: React.FC<CoursePageProps> = ({ title, description, weeks }) => {
     const { isDarkMode } = useStore();
 
     useEffect(() => {
@@ -39,19 +40,46 @@ const CoursePage: React.FC<CoursePageProps> = ({ title, description, syllabus })
                             </div>
                         </div>
 
-                        {/* Syllabus */}
+                        {/* Curriculum */}
                         <div className="space-y-6">
                             <h2 className="font-display font-bold text-2xl sm:text-3xl text-gray-900 dark:text-white flex items-center gap-3">
                                 <span className="w-2 h-8 bg-cyan rounded-full"></span>
-                                Course Syllabus
+                                Course Curriculum
                             </h2>
-                            <div className="grid gap-4">
-                                {syllabus.map((item, idx) => (
-                                    <div key={idx} className="glass-panel p-5 rounded-xl flex items-start gap-4 hover:border-cyan/30 transition-colors duration-300 group">
-                                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-cyan/10 text-cyan flex items-center justify-center font-bold font-display group-hover:bg-cyan group-hover:text-white transition-all duration-300">
-                                            {idx + 1}
-                                        </span>
-                                        <span className="text-lg text-gray-800 dark:text-gray-200 pt-0.5 font-medium">{item}</span>
+                            <div className="grid gap-6">
+                                {weeks.map((week, idx) => (
+                                    <div 
+                                        key={idx} 
+                                        className={`glass-panel p-6 sm:p-8 rounded-2xl transition-all duration-300 ${
+                                            week.isLocked 
+                                                ? 'opacity-60 blur-sm' 
+                                                : 'hover:border-cyan/30'
+                                        }`}
+                                    >
+                                        {/* Week Header */}
+                                        <div className="flex items-center gap-4 mb-4">
+                                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-cyan to-purple flex items-center justify-center">
+                                                <span className="font-display font-black text-xl text-white">{week.weekNumber}</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h3 className="font-display font-bold text-xl sm:text-2xl text-gray-900 dark:text-white uppercase tracking-wider">
+                                                    {week.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Topics */}
+                                        <div className="space-y-3 ml-16">
+                                            {week.topics.map((topic, topicIdx) => (
+                                                <div 
+                                                    key={topicIdx} 
+                                                    className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
+                                                >
+                                                    <div className="w-2 h-2 rounded-full bg-cyan/50"></div>
+                                                    <span className="text-base sm:text-lg font-medium">{topic}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 ))}
                             </div>

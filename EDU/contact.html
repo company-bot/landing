@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/logo/favicon.png?v=2" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <script>
         tailwind.config = {
@@ -22,8 +22,9 @@
                         purple: { DEFAULT: '#4A1F62', glow: '#4A1F6280' }
                     },
                     fontFamily: {
-                        sans: ['Rajdhani', 'sans-serif'],
-                        display: ['Orbitron', 'sans-serif'],
+                        sans: ['Geist Sans', 'sans-serif'],
+                        display: ['Geist Sans', 'sans-serif'],
+                        mono: ['Geist Mono', 'monospace'],
                     },
                     backgroundImage: {
                         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -33,6 +34,21 @@
         }
     </script>
     <style>
+        /* Font Rules */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        body, p, div {
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        button, .btn, .accent-text {
+            font-family: 'Geist Mono', monospace;
+        }
+
         /* Glass morphism styles */
         .glass-panel {
             background: rgba(243, 244, 246, 0.8);

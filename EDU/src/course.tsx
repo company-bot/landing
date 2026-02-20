@@ -36,7 +36,7 @@ const CourseLoader = () => {
         <CoursePage
             title={course.title}
             description={course.description}
-            syllabus={course.syllabus}
+            weeks={course.weeks}
         />
     );
 };

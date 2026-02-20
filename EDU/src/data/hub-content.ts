@@ -135,7 +135,7 @@ export const pythonData: HubData = {
     color: 'blue',
     levels: {
         basic: {
-            title: "Basic Track",
+            title: "Beginner’s Roadmap",
             description: "A steady-paced introduction for absolute beginners. We take it one step at a time.",
             modules: [
                 { title: "Week 1: Introduction", topics: ["Setting up the Environment", "Hello World", "Simple Arithmetic"] },
@@ -151,7 +151,7 @@ export const pythonData: HubData = {
             ]
         },
         advanced: {
-            title: "Advanced Track",
+            title: "Specialization Track",
             description: "A high-intensity, fast-paced path. Rapidly move from basics to professional specialization domains.",
             modules: [
                 { title: "Module 1: Rapid Core", topics: ["Hello World to Control Flow", "Logical Operators", "List Comprehensions"] },
@@ -178,7 +178,7 @@ export const webDevData: HubData = {
     color: 'purple',
     levels: {
         basic: {
-            title: "Web Development Foundations - Basic",
+            title: "Beginner’s Roadmap",
             description: "Start your journey into web development. Learn HTML to structure content and CSS to style it beautifully.",
             modules: [
                 { title: "Module 1: How the Web Works", topics: ["Client-Server Architecture", "HTTP Protocol", "URLs & Domain Names", "Browser Basics"] },
@@ -190,7 +190,7 @@ export const webDevData: HubData = {
             ]
         },
         advanced: {
-            title: "Web Development Foundations - Advanced",
+            title: "Specialization Track",
             description: "Master modern web development with JavaScript and backend concepts. Build interactive, data-driven applications.",
             modules: [
                 { title: "Module 1: JavaScript ES6+ Features", topics: ["Variables & Scope", "Arrow Functions", "Destructuring", "Modules"] },
