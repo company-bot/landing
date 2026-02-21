@@ -85,10 +85,10 @@ const ContactForm = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="font-display font-bold text-cyan text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
+          <h2 className="font-display font-bold text-cyan text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
             Get In Touch
           </h2>
-          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-950 dark:text-white mb-6">
+          <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-950 dark:text-white mb-6">
             <span className="text-glow-cyan">Start Your Journey</span>
           </h3>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">

@@ -37,7 +37,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display font-black text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter text-gray-950 dark:text-white mix-blend-screen leading-none"
+          className="font-display font-black text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter text-gray-950 dark:text-white mix-blend-screen leading-none"
         >
           <span className="block text-glow-cyan">SYZENTRIC</span>
         </motion.h1>

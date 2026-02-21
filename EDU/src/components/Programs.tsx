@@ -181,10 +181,10 @@ const Programs = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="font-display font-bold text-cyan text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
+          <h2 className="font-display font-bold text-cyan text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
             Our Programs
           </h2>
-          <h4 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+          <h4 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-gray-950 dark:text-white">
             Learn by Doing, Think by Logic
           </h4>
           <p className="mt-6 text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
@@ -199,23 +199,23 @@ const Programs = () => {
             return (
               <GlassCard key={index} glowColor={program.color} delay={index * 0.1}>
                 <div className="flex flex-col h-full">
-                  <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${program.color === 'cyan'
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${program.color === 'cyan'
                     ? 'from-cyan/20 to-purple/10'
                     : 'from-purple/20 to-cyan/10'
                     } flex items-center justify-center mb-4`}>
-                    <Icon className={`w-7 h-7 ${program.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
+                    <Icon className={`w-6 h-6 ${program.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
                   </div>
 
-                  <h4 className="font-display font-bold text-xl sm:text-2xl text-gray-900 dark:text-white mb-3">
+                  <h4 className="font-display font-bold text-lg sm:text-xl text-gray-900 dark:text-white mb-3">
                     {program.title}
                   </h4>
 
-                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-400 mb-5 leading-relaxed">
                     {program.description}
                   </p>
 
                   {program.details && (
-                    <ul className="text-sm text-gray-700 dark:text-gray-400 space-y-2 mb-5 list-disc list-inside">
+                    <ul className="text-xs sm:text-sm text-gray-700 dark:text-gray-400 space-y-2 mb-5 list-disc list-inside">
                       {/* @ts-ignore */}
                       {program.details.map((item: string, i: number) => (
                         <li key={i}>{item}</li>
@@ -231,7 +231,7 @@ const Programs = () => {
                         <a
                           key={level.name}
                           href={level.url}
-                          className={`flex-1 py-2 text-center rounded-lg font-bold text-sm tracking-wider border transition-all duration-300 ${program.color === 'cyan'
+                          className={`flex-1 py-1.5 text-center rounded-lg font-bold text-xs tracking-wider border transition-all duration-300 ${program.color === 'cyan'
                             ? 'border-cyan/50 text-cyan hover:bg-cyan hover:text-white'
                             : 'border-purple/50 text-purple hover:bg-purple hover:text-white'
                             }`}

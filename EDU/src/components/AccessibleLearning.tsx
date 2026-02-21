@@ -46,10 +46,10 @@ const AccessibleLearning = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="font-display font-bold text-purple text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
+          <h2 className="font-display font-bold text-purple text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
             Accessible for Everyone
           </h2>
-          <h3 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+          <h3 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-gray-950 dark:text-white">
             Learn at Your <span className="text-glow-purple">Own Pace</span>
           </h3>
           <p className="mt-6 text-base sm:text-lg text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
@@ -70,7 +70,7 @@ const AccessibleLearning = () => {
               >
                 <div className="flex flex-col h-full">
                   {/* Badge */}
-                  <div className={`inline-flex items-center gap-2 self-start px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 ${step.color === 'cyan'
+                  <div className={`inline-flex items-center gap-2 self-start px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-5 ${step.color === 'cyan'
                       ? 'bg-cyan/20 text-cyan'
                       : 'bg-purple/20 text-purple'
                     }`}>
@@ -78,21 +78,21 @@ const AccessibleLearning = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color === 'cyan'
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${step.color === 'cyan'
                       ? 'from-cyan/20 to-purple/10'
                       : 'from-purple/20 to-cyan/10'
                     } flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
+                    <Icon className={`w-6 h-6 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'}`} />
                   </div>
 
                   {/* Title */}
-                  <h4 className={`font-display font-bold text-2xl sm:text-3xl mb-4 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'
+                  <h4 className={`font-display font-bold text-xl sm:text-2xl mb-4 ${step.color === 'cyan' ? 'text-cyan' : 'text-purple'
                     }`}>
                     {step.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-base sm:text-lg text-gray-700 dark:text-gray-400 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-6 leading-relaxed">
                     {step.description}
                   </p>
 
@@ -105,7 +105,7 @@ const AccessibleLearning = () => {
                       >
                         <div className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${step.color === 'cyan' ? 'bg-cyan' : 'bg-purple'
                           }`} />
-                        <span className="text-sm sm:text-base text-gray-600 dark:text-gray-500">
+                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-500">
                           {feature}
                         </span>
                       </div>
@@ -117,7 +117,7 @@ const AccessibleLearning = () => {
                   {step.affordabilityNote && (
                     <div className="mt-6 p-3 bg-purple/5 border border-purple/10 rounded-lg">
                       <div className="flex items-center justify-center gap-3">
-                        <p className="italic text-sm text-purple/80">{step.affordabilityNote}</p>
+                        <p className="italic text-xs text-purple/80">{step.affordabilityNote}</p>
                         <a
                           href="#contact"
                           onClick={(e) => {

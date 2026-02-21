@@ -26,7 +26,7 @@ const GlassCard: React.FC<GlassCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: delay, ease: "easeOut" }}
-      className={`glass-panel rounded-xl p-6 transition-all duration-300 group relative overflow-hidden ${glowStyles[glowColor]} ${className}`}
+      className={`glass-panel rounded-xl p-5 sm:p-6 transition-all duration-300 group relative overflow-hidden ${glowStyles[glowColor]} ${className}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       <div className="relative z-10 h-full">

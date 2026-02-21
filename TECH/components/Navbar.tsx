@@ -57,7 +57,7 @@ const Navbar = () => {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="font-bold text-lg uppercase tracking-widest text-gray-800 dark:text-gray-400 hover:text-cyan dark:hover:text-cyan transition-colors relative group"
+              className="font-bold text-base uppercase tracking-wider text-gray-800 dark:text-gray-400 hover:text-cyan dark:hover:text-cyan transition-colors relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan transition-all group-hover:w-full" />
@@ -106,7 +106,7 @@ const Navbar = () => {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="font-sans text-xs sm:text-sm uppercase tracking-widest text-gray-800 dark:text-gray-300 py-3 border-b border-gray-300 dark:border-white/5 hover:text-cyan transition-colors"
+                className="font-bold text-base uppercase tracking-wider text-gray-800 dark:text-gray-300 py-3 border-b border-gray-300 dark:border-white/5 hover:text-cyan transition-colors"
             >
               {link.label}
             </a>

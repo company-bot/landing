@@ -49,10 +49,10 @@ const Features = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="font-display font-bold text-purple text-sm sm:text-base uppercase tracking-[0.2em] mb-4">
+          <h2 className="font-display font-bold text-purple text-xs sm:text-sm uppercase tracking-[0.2em] mb-4">
             Why Choose Us
           </h2>
-          <h4 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-5xl text-gray-950 dark:text-white">
+          <h4 className="font-display font-black text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-gray-950 dark:text-white">
             Premium Learning Experience
           </h4>
         </motion.div>
@@ -68,19 +68,19 @@ const Features = () => {
                 delay={index * 0.1}
               >
                 <div className="text-center">
-                  <div className={`w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center bg-gradient-to-br ${
+                  <div className={`w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center bg-gradient-to-br ${
                     index % 2 === 0 
                       ? 'from-cyan/20 to-purple/10' 
                       : 'from-purple/20 to-cyan/10'
                   }`}>
-                    <Icon className={`w-8 h-8 ${index % 2 === 0 ? 'text-cyan' : 'text-purple'}`} />
+                    <Icon className={`w-6 h-6 ${index % 2 === 0 ? 'text-cyan' : 'text-purple'}`} />
                   </div>
                   
-                  <h4 className="font-display font-bold text-lg sm:text-xl text-gray-900 dark:text-white mb-3">
+                  <h4 className="font-display font-bold text-base sm:text-lg text-gray-900 dark:text-white mb-3">
                     {feature.title}
                   </h4>
                   
-                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400">
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-400">
                     {feature.description}
                   </p>
                 </div>
