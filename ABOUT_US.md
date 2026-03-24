@@ -63,7 +63,9 @@ We envision a future where technology amplifies human potential rather than repl
 
 Ready to build the future?
 
-*   **Email**: syzentric@gmail.com | edu@syzentric.com
+*   **Email**: syzentric@gmail.com
+*   **Facebook**: [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/)
+*   **Instagram**: [@syzentric](https://www.instagram.com/syzentric)
 *   **Twitter/X**: [@syzentric](https://x.com/syzentric)
 *   **LinkedIn**: [SyZentric Company Page](https://www.linkedin.com/company/syzentric/)
 

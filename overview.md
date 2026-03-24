@@ -293,13 +293,13 @@ Yes, we are continuously adding learning resources and interactive content.
 ## 📞 Support and Communication
 
 **How can I contact Syzentric?**
-Email us at info@syzentric.com or find us on social media.
+Email us at syzentric@gmail.com, or find us on Facebook ([SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/)), Instagram ([@syzentric](https://www.instagram.com/syzentric)), Twitter/X ([@syzentric](https://x.com/syzentric)), and LinkedIn ([SyZentric Company Page](https://www.linkedin.com/company/syzentric/)).
 
 **Do you offer live support?**
 We are integrating AI chatbots to provide instant responses to common queries.
 
 **Where can I report an issue?**
-You can report issues via email, linkedin or twitter.
+You can report issues via email, Facebook, Instagram, Twitter/X, or LinkedIn using the same channels above.
 
 ---
 

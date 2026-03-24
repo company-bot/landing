@@ -633,7 +633,7 @@ export const knowledgeBase: KnowledgeItem[] = [
   // Business and Onboarding
   {
     keywords: ['get started', 'start', 'begin', 'how to start', 'onboarding', 'first step'],
-    answer: "Getting started is easy! Contact us via email at **syzentric@gmail.com** or reach out on LinkedIn or Twitter. We'll start with a consultation to understand your needs, followed by a proposal and development phase.",
+    answer: "Getting started is easy! Contact us via email at **syzentric@gmail.com** or reach out on **Facebook** at [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/), **Instagram** at [@syzentric](https://www.instagram.com/syzentric), **Twitter/X** at [@syzentric](https://x.com/syzentric), or **LinkedIn** at our [company page](https://www.linkedin.com/company/syzentric/). We'll start with a consultation to understand your needs, followed by a proposal and development phase.",
     category: 'onboarding',
     relatedQuestions: [
       "What is your onboarding process?",
@@ -736,18 +736,29 @@ export const knowledgeBase: KnowledgeItem[] = [
 
   // Contact & Support
   {
-    keywords: ['contact', 'reach', 'get in touch', 'email', 'phone', 'call', 'message'],
-    answer: "You can contact us at **syzentric@gmail.com**, find us on **Twitter/X** at [@syzentric](https://x.com/syzentric), or connect on **LinkedIn** at our [company page](https://www.linkedin.com/company/syzentric/).",
+    keywords: ['contact', 'reach', 'get in touch', 'email', 'phone', 'call', 'message', 'social media', 'social handle', 'social handles', 'facebook', 'instagram', 'twitter', 'x', 'linkedin'],
+    answer: "You can contact us at **syzentric@gmail.com**, find us on **Facebook** at [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/), **Instagram** at [@syzentric](https://www.instagram.com/syzentric), **Twitter/X** at [@syzentric](https://x.com/syzentric), or connect on **LinkedIn** at our [company page](https://www.linkedin.com/company/syzentric/).",
     category: 'contact',
     relatedQuestions: [
+      "What are your social media handles?",
       "Do you offer live support?",
       "What are your working hours?",
       "How do I report an issue?"
     ]
   },
   {
+    keywords: ['social media handles', 'social links', 'facebook link', 'instagram link', 'twitter link', 'x link', 'linkedin link', 'where are you on social media'],
+    answer: "You can find us on **Facebook** at [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/), **Instagram** at [@syzentric](https://www.instagram.com/syzentric), **Twitter/X** at [@syzentric](https://x.com/syzentric), and **LinkedIn** at our [company page](https://www.linkedin.com/company/syzentric/). For direct contact, email **syzentric@gmail.com**.",
+    category: 'contact',
+    relatedQuestions: [
+      "How can I contact you?",
+      "Where can I report an issue?",
+      "Do you offer live support?"
+    ]
+  },
+  {
     keywords: ['support', 'help', 'assistance', 'customer service', 'need help'],
-    answer: "We're integrating AI chatbots to provide instant responses to common queries. You can also email us at **syzentric@gmail.com** or reach out on social media for support.",
+    answer: "We're integrating AI chatbots to provide instant responses to common queries. You can also email us at **syzentric@gmail.com** or reach out on **Facebook**, **Instagram**, **Twitter/X**, or **LinkedIn** for support.",
     category: 'contact',
     relatedQuestions: [
       "Do you offer live support?",
@@ -767,7 +778,7 @@ export const knowledgeBase: KnowledgeItem[] = [
   },
   {
     keywords: ['report issue', 'bug', 'problem', 'error', 'not working'],
-    answer: "You can report issues via **email** at syzentric@gmail.com, on **LinkedIn**, or on **Twitter/X** [@syzentric](https://x.com/syzentric). We'll respond as quickly as possible.",
+    answer: "You can report issues via **email** at syzentric@gmail.com, on **Facebook** at [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/), **Instagram** at [@syzentric](https://www.instagram.com/syzentric), **Twitter/X** at [@syzentric](https://x.com/syzentric), or **LinkedIn** at our [company page](https://www.linkedin.com/company/syzentric/). We'll respond as quickly as possible.",
     category: 'contact',
     relatedQuestions: [
       "How can I contact you?",

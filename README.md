@@ -52,6 +52,8 @@ Our educational arm is dedicated to the youth. We recognize a significant discon
 ## 📫 Connect With Us
 
 * **Email:** syzentric@gmail.com
+* **Facebook:** [SyZentric](https://www.facebook.com/people/SyZentric/61578396158532/)
+* **Instagram:** [@syzentric](https://www.instagram.com/syzentric)
 * **Twitter/X:** [@syzentric](https://x.com/syzentric)
 * **LinkedIn:** [SyZentric Company Page](https://www.linkedin.com/company/syzentric/)
 

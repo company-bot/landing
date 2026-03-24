@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Twitter, CheckCircle2, Globe, Send, MessageCircle } from 'lucide-react';
+import { Mail, Linkedin, Twitter, Facebook, Instagram, CheckCircle2, Globe, Send, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -86,7 +86,7 @@ const Footer = () => {
           {/* 3. Professional Proof & Direct Chat */}
           <div className="lg:col-span-1">
             <h3 className="font-display font-bold text-xl text-gray-900 dark:text-white mb-6">Connect</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+            <div className="grid grid-cols-2 gap-3">
 
               {/* LinkedIn - Brand Blue Hover */}
               <a
@@ -100,6 +100,36 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">LinkedIn</span>
+                </div>
+              </a>
+
+              {/* Facebook - Brand Blue Hover */}
+              <a
+                href="https://www.facebook.com/people/SyZentric/61578396158532/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#1877F2] dark:hover:bg-[#1877F2] group transition-all duration-300 shadow-sm"
+              >
+                <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
+                  <Facebook className="w-5 h-5 text-[#1877F2] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div>
+                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">Facebook</span>
+                </div>
+              </a>
+
+              {/* Instagram - Brand Pink Hover */}
+              <a
+                href="https://www.instagram.com/syzentric"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-3 rounded-lg bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-[#E4405F] dark:hover:bg-[#E4405F] group transition-all duration-300 shadow-sm"
+              >
+                <div className="p-2 rounded bg-gray-100 dark:bg-white/10 group-hover:bg-white/20">
+                  <Instagram className="w-5 h-5 text-[#E4405F] group-hover:text-white transition-colors duration-300" />
+                </div>
+                <div>
+                  <span className="text-gray-900 dark:text-white font-semibold block text-sm group-hover:text-white">Instagram</span>
                 </div>
               </a>
 
